@@ -1,0 +1,61 @@
+// Highscores
+
+#highscores {
+  position: absolute;
+  top: 100vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 300;
+  background: $c-bg;
+  padding: 1rem;
+  height: 100%;
+
+  .highscores__wrapper {
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+  }
+
+  .highscores__list-wrapper {
+    margin: 5rem auto;
+  }
+
+  .highscores__list {
+    margin: 1rem auto;
+    list-style: none;
+    width: 100%;
+    font-size: 1.2rem;
+
+    li {
+      width: 100%;
+      padding: 1rem;
+      border-bottom: 1px solid $c-text-lighter;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .score__wrapper {
+    display: flex;
+
+    .score__name {
+      flex: 1 1 50%;
+    }
+    .score__category {
+      flex: 1 1 30%;
+    }
+
+    .score__up {
+      flex: 1 1 10%;
+      color: $c-green;
+    }
+
+    .score__down {
+      flex: 1 1 10%;
+      color: $c-red;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+// Intro
+
+#intro {
+  padding: 4rem 1rem 1rem;
+  height: 100vh;
+  overflow: auto;
+
+  .intro__header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: darken($c-bg, 5%);
+    font-size: .8rem;
+  }
+
+  .intro__app-name {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $c-text-lighter;
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+    
+    p {
+      text-align: center;
+    }
+  }
+
+  .intro__how-to {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $c-text-lighter;
+    color: $c-text-light;
+
+    h3 {
+      margin: 0 0 .5rem;
+    }
+
+    ol {
+      margin: 0;
+      font-size: .85rem;
+
+      li {
+        margin-bottom: .2rem;
+      }
+    }
+  }
+
+  .intro__category-wrapper {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+    .intro__category {
+      display: flex;
+      flex: 1 1 20%;
+      padding: 2rem 1rem;
+      cursor: pointer;
+
+      span {
+        text-align: center;
+        align-self: center;
+        width: 100%;
+        min-width: 150px;
+      }
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+  }
+
+  .intro__setting-name,
+  .intro__start {
+    text-align: center;
+  }
+}
