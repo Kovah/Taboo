@@ -1,5 +1,5 @@
 /*
- * Gruntfile for IAA Landingpage
+ * Gruntfile for KVH Tabu
  */
 
 module.exports = function (grunt) {
@@ -72,6 +72,19 @@ module.exports = function (grunt) {
           src: ['**/*.scss'],
           ext: '.css'
         }]
+      },
+      build: {
+        options: {
+          outputStyle: 'compressed',
+          sourceComments: false
+        },
+        files: [{
+          expand: true,
+          cwd: config.sassPath,
+          dest: config.minPath,
+          src: ['**/*.scss'],
+          ext: '.css'
+        }]
       }
     },
 
@@ -98,6 +111,13 @@ module.exports = function (grunt) {
     'uglify:dev',
     'copy:js',
     'watch'
+  ]);
+
+  grunt.registerTask('build', [
+    'clean',
+    'sass:build',
+    'uglify:dev',
+    'copy:js'
   ]);
 
   grunt.registerTask('default', ['dev']);
