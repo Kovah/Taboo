@@ -112,7 +112,6 @@ $game['categories'] = [
             <button id="show-results" class="btn btn-block">
                 <?php echo $lang['app.show-results']; ?>
             </button>
-            <br><br>
             <button class="back-to-menu btn btn-block">
                 <?php echo $lang['app.back-to-menu']; ?>
             </button>
@@ -147,7 +146,6 @@ $game['categories'] = [
             <button class="show-highscores btn btn-block">
                 <?php echo $lang['app.show-highscores']; ?>
             </button>
-            <br><br>
             <button class="back-to-menu btn btn-block">
                 <?php echo $lang['app.back-to-menu']; ?>
             </button>
@@ -190,7 +188,6 @@ $game['categories'] = [
         <button class="back-to-menu btn btn-block">
             <?php echo $lang['app.back-to-menu']; ?>
         </button>
-
         <button id="highscores-reset" class="btn btn-block">
             <?php echo $lang['highscores.reset']; ?>
         </button>
