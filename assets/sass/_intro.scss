@@ -14,6 +14,11 @@
     font-size: .8rem;
   }
 
+  .lang__select {
+    font-size: .9rem;
+    text-transform: uppercase;
+  }
+
   .intro__app-name {
     padding-bottom: 2rem;
     margin-bottom: 2rem;
@@ -43,10 +48,10 @@
 
     ol {
       margin: 0;
-      font-size: .85rem;
+      font-size: .9rem;
 
       li {
-        margin-bottom: .2rem;
+        margin-bottom: .25rem;
       }
     }
   }
