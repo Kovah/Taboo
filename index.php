@@ -44,6 +44,9 @@ $game['categories'] = [
     <meta name="description" content="A small Tabu-like game for your browser">
     <meta name="author" content="Kovah.de">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <link href="/assets/min/main.css" rel="stylesheet">
 </head>
 
