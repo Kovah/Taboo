@@ -104,13 +104,15 @@ $game['categories'] = [
         </div>
     </div>
     <div class="game__word">
-        <div id="game-ready" data-old-text="<?php echo $lang['game.get-ready']; ?>"><?php echo $lang['game.get-ready']; ?></div>
+        <div id="game-ready"
+             data-old-text="<?php echo $lang['game.get-ready']; ?>"><?php echo $lang['game.get-ready']; ?></div>
         <div id="game-word" style="display: none"></div>
         <div id="game-over" style="display: none">
             <?php echo $lang['game.over'] ?><br><br>
             <button id="show-results" class="btn btn-block">
                 <?php echo $lang['app.show-results']; ?>
             </button>
+            <br><br>
             <button class="back-to-menu btn btn-block">
                 <?php echo $lang['app.back-to-menu']; ?>
             </button>
@@ -145,7 +147,7 @@ $game['categories'] = [
             <button class="show-highscores btn btn-block">
                 <?php echo $lang['app.show-highscores']; ?>
             </button>
-            <br>
+            <br><br>
             <button class="back-to-menu btn btn-block">
                 <?php echo $lang['app.back-to-menu']; ?>
             </button>
