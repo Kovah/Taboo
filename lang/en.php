@@ -6,7 +6,7 @@ $lang = [
       <ol>
         <li>Enter your name and choose a category</li>
         <li>Start the game</li>
-        <li>You have 120 seconds to explain the shown word to your friends <b>without</b> using the word or parts of it</li>
+        <li>You have 180 seconds to explain the shown word to your friends <b>without</b> using the word or parts of it</li>
         <li>Tap on the check mark if your friends guessed the word. Tap the cross to pick the next word.</li>
         <li>Scores will be saved in your browser</li>
       </ol>',

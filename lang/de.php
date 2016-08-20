@@ -6,7 +6,7 @@ $lang = [
       <ol>
         <li>Gib deinen Namen ein und wähle eine Kategorie</li>
         <li>Start the game</li>
-        <li>Du hast 120 Sekunden, um deinen Freunden das angezeigte Wort zu erklären. Verwende aber nicht das Wort oder Teile des Wortes.</li>
+        <li>Du hast 180 Sekunden, um deinen Freunden das angezeigte Wort zu erklären. Verwende aber nicht das Wort oder Teile des Wortes.</li>
         <li>Klicke auf den grünen Button, wenn deine Freunde das Wort erraten haben. Klicke Rot, wenn du das Wort überspringen möchtest.</li>
         <li>Die Ergebnisse werden in deinem Browser gespeichert</li>
       </ol>',

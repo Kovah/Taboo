@@ -16,7 +16,7 @@ var gamePointsUpEl = $('#game-point-up');
 var gamePointsDownEl = $('#game-point-down');
 var gameTimer = $('#game-timer');
 var gameTimerInt;
-var gameTime = 120;
+var gameTime = 180;
 var gameWords;
 var gameWordsCount;
 var gameSession = {name: '', down: 0, up: 0, words: 0, category: ''};
