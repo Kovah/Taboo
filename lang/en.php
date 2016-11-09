@@ -10,6 +10,7 @@ $lang = [
         <li>Tap on the check mark if your friends guessed the word. Tap the cross to pick the next word.</li>
         <li>Scores will be saved in your browser</li>
       </ol>',
+    'app.copy' => 'KVH Tabu is a project by <a href="https://kovah.de">Kovah.de</a> | <a href="https://github.com/Kovah/Tabu">Source</a>',
 
     'category.animals'  => 'Animals',
     'category.people'  => 'Famous People',
@@ -22,7 +23,7 @@ $lang = [
     'category.sports'  => 'Sports',
     'category.web'  => 'The Web',
 
-    'game.start' => 'Start!',
+    'game.start' => 'Start the Game!',
     'game.get-ready' => 'Get ready!',
     'game.time-remaining' => 'Time remaining:',
     'game.exit' => 'Exit',

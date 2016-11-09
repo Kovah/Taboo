@@ -1,15 +1,16 @@
 <?php
 $lang = [
     'app.name' => 'KVH Tabu',
-    'app.description' => 'KVH Tabu ist ein kleines Tabu-ähnliches Spiel',
+    'app.description' => 'Ein kleines, Tabu-ähnliches Spiel für den Browser',
     'app.how-to' => '<h3>So wird gespielt</h3>
       <ol>
-        <li>Gib deinen Namen ein und wähle eine Kategorie</li>
-        <li>Starte das Spiel</li>
+        <li>Gib deinen Namen ein und wähle eine Kategorie.</li>
+        <li>Starte das Spiel.</li>
         <li>Du hast 180 Sekunden, um deinen Freunden das angezeigte Wort zu erklären. Du darfst zur Erklärung nicht die Wörter aus dem roten Bereich nutzen!</li>
         <li>Klicke auf den grünen Button, wenn deine Freunde das Wort erraten haben. Klicke Rot, wenn du das Wort überspringen möchtest.</li>
-        <li>Die Ergebnisse werden in deinem Browser gespeichert</li>
+        <li>Alle Ergebnisse werden in deinem Browser gespeichert.</li>
       </ol>',
+    'app.copy' => 'KVH Tabu ist ein Projekt von <a href="https://kovah.de">Kovah.de</a> | <a href="https://github.com/Kovah/Tabu">Source</a>',
 
     'category.animals'  => 'Tiere',
     'category.people'  => 'Berühmte Personen',
@@ -22,7 +23,7 @@ $lang = [
     'category.sports'  => 'Sport',
     'category.web'  => 'Das Web',
 
-    'game.start' => 'Starten!',
+    'game.start' => 'Spiel starten!',
     'game.get-ready' => 'Mach dich bereit!',
     'game.time-remaining' => 'Verbleibende Zeit:',
     'game.exit' => 'Beenden',

@@ -88,6 +88,10 @@ $game['categories'] = [
                 <?php echo $lang['app.show-highscores']; ?>
             </button>
         </div>
+        <div class="intro__copy">
+            <?php echo $lang['app.copy']; ?>
+        </div>
+
     </div>
 </div>
 

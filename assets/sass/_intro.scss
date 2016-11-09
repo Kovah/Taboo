@@ -85,4 +85,21 @@
   .intro__start {
     text-align: center;
   }
+  .intro__copy {
+    font-size: .9rem;
+    text-align: center;
+    margin: 3rem 0 2rem;
+    color: lighten($c-text-light, 20%);
+
+    a {
+      color: $c-text-light;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $c-text-light;
+        text-decoration: underline;
+      }
+    }
+  }
 }
