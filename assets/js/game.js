@@ -33,6 +33,11 @@ var $highscores = $('#highscores');
 var $highscoresList = $('#highscore-list');
 var $highscoresUnavailable = $('#highscore-list-unavailable');
 var $highscoresReset = $('#highscores-reset');
+var HTMLReplaceTags = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;'
+};
 
 // Functions
 function checkStartInput() {
@@ -59,6 +64,10 @@ function pickRandomProperty(obj) {
     computedResult.buzzwords = split[1].split(':');
 
     return computedResult;
+}
+
+function replaceTag(tag) {
+    return HTMLReplaceTags[tag] || tag;
 }
 
 // Game
@@ -196,13 +205,16 @@ $(function () {
             return;
         }
 
-        $gameWord.text(newWord.word);
+        $gameWord.text(newWord.word.replace(/[&<>]/g, replaceTag));
         $gameBuzzwords.html('');
 
         // Set Buzzwords
         if (newWord.buzzwords.length > 1) {
             for (var index = 0; index < newWord.buzzwords.length; index++) {
-                $gameBuzzwords.append('<span class="game__buzzword">' + newWord.buzzwords[index] + '</span>');
+                var string = '<span class="game__buzzword">';
+                string += newWord.buzzwords[index].replace(/[&<>]/g, replaceTag);
+                string += '</span>';
+                $gameBuzzwords.append(string);
             }
         }
     }
