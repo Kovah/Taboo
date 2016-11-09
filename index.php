@@ -30,8 +30,8 @@ $game['categories'] = [
     'city-country',
     'cars',
     'tv',
-    'literature',
     'sports',
+    'literature',
     'web',
 ];
 ?>
@@ -59,34 +59,40 @@ $game['categories'] = [
         <?php endforeach; ?>
     </div>
 
-    <div class="intro__app-name">
-        <h1><?php echo $lang['app.name']; ?></h1>
-        <p><?php echo $lang['app.description']; ?></p>
-    </div>
-    <div class="intro__how-to">
-        <?php echo $lang['app.how-to']; ?>
-    </div>
-    <div class="intro__settings">
-        <div class="intro__setting-name">
-            <input type="text" placeholder="<?php echo $lang['app.enter-name']; ?>" name="name">
+    <div class="intro__content">
+
+        <div class="intro__app-name">
+            <h1><?php echo $lang['app.name']; ?></h1>
+            <p><?php echo $lang['app.description']; ?></p>
         </div>
-        <div class="intro__category-wrapper">
-            <?php foreach ($game['categories'] as $category) : ?>
-                <input type="radio" value="<?php echo $category; ?>" name="category"
-                       id="cat-<?php echo $category; ?>">
-                <label for="cat-<?php echo $category; ?>"
-                       class="intro__category category category__<?php echo $category; ?> has-hover">
-                    <span><?php echo $lang['category.' . $category]; ?></span>
-                </label>
-            <?php endforeach; ?>
+
+        <div class="intro__how-to">
+            <?php echo $lang['app.how-to']; ?>
         </div>
-        <div class="intro__start">
-            <button id="start-game" class="btn btn-block is-disabled" disabled="disabled">
-                <?php echo $lang['game.start']; ?>
-            </button>
-            <button class="show-highscores btn btn-block">
-                <?php echo $lang['app.show-highscores']; ?>
-            </button>
+
+        <div class="intro__settings">
+            <div class="intro__setting-name">
+                <label for="name"><?php echo $lang['app.enter-name']; ?>:</label>
+                <input type="text" name="name">
+            </div>
+            <div class="intro__category-wrapper">
+                <?php foreach ($game['categories'] as $category) : ?>
+                    <input type="radio" value="<?php echo $category; ?>" name="category"
+                           id="cat-<?php echo $category; ?>">
+                    <label for="cat-<?php echo $category; ?>"
+                           class="intro__category category category__<?php echo $category; ?> has-hover">
+                        <span><?php echo $lang['category.' . $category]; ?></span>
+                    </label>
+                <?php endforeach; ?>
+            </div>
+            <div class="intro__start">
+                <button id="start-game" class="btn btn-block is-disabled" disabled="disabled">
+                    <?php echo $lang['game.start']; ?>
+                </button>
+                <button class="show-highscores btn btn-block">
+                    <?php echo $lang['app.show-highscores']; ?>
+                </button>
+            </div>
         </div>
         <div class="intro__copy">
             <?php echo $lang['app.copy']; ?>

@@ -34,6 +34,9 @@ $input-bg: lighten($c-bg, 5%);
 $input-border: darken($c-bg, 5%);
 $input-border-hover: darken($c-bg, 10%);
 $input-border-focus: $c-text-lighter;
+$input-padding-x: 1.5rem;
+$input-padding-y: 1rem;
+$input-padding: $input-padding-y $input-padding-x;
 
 // Animation
 $animspeed: 250ms;

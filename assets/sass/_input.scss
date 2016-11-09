@@ -4,7 +4,7 @@ input {
   min-width: 300px;
   font-size: 1rem;
   line-height: 1;
-  padding: 1rem 1.5rem;
+  padding: $input-padding;
   margin: 0 auto;
   border: 1px solid $input-border;
   background: $input-bg;
