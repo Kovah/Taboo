@@ -61,7 +61,12 @@ function pickRandomProperty(obj) {
     // Parse words
     var split = result.split('|');
     computedResult.word = split[0];
-    computedResult.buzzwords = split[1].split(':');
+
+    if (typeof split[1] != 'undefined') {
+        computedResult.buzzwords = split[1].split(':');
+    } else {
+        computedResult.buzzwords = [];
+    }
 
     return computedResult;
 }
