@@ -12,12 +12,12 @@ unset($url_params[0]);
 $url_params = array_values($url_params);
 
 // Language Handling
-$game['available_langs'] = ['en', 'de'];
+$game['available_langs'] = ['de'];
 
 if (!empty($url_params[0]) && in_array($url_params[0], $game['available_langs'])) {
     $game['lang'] = $url_params[0];
 } else {
-    $game['lang'] = 'en';
+    $game['lang'] = 'de';
 }
 
 require_once('lang/' . $game['lang'] . '.php');
@@ -29,7 +29,7 @@ $game['categories'] = [
     'things',
     'city-country',
     'cars',
-    'movies',
+    'tv',
     'literature',
     'sports',
     'web',
