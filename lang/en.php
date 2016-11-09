@@ -6,12 +6,11 @@ $lang = [
       <ol>
         <li>Enter your name and choose a category</li>
         <li>Start the game</li>
-        <li>You have 180 seconds to explain the shown word to your friends <b>without</b> using the word or parts of it</li>
+        <li>You have 180 seconds to explain the shown word to your friends <b>without</b> using the words in the red box!</li>
         <li>Tap on the check mark if your friends guessed the word. Tap the cross to pick the next word.</li>
         <li>Scores will be saved in your browser</li>
       </ol>',
 
-    'category.all'  => 'All Categories',
     'category.animals'  => 'Animals',
     'category.people'  => 'Famous People',
     'category.cars'  => 'Vehicles',
@@ -21,6 +20,7 @@ $lang = [
     'category.movies'  => 'Movies',
     'category.literature'  => 'Literature',
     'category.sports'  => 'Sports',
+    'category.web'  => 'The Web',
 
     'game.start' => 'Start!',
     'game.get-ready' => 'Get ready!',

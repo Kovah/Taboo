@@ -23,7 +23,6 @@ if (!empty($url_params[0]) && in_array($url_params[0], $game['available_langs'])
 require_once('lang/' . $game['lang'] . '.php');
 
 $game['categories'] = [
-    'all',
     'animals',
     'people',
     'food',
@@ -33,6 +32,7 @@ $game['categories'] = [
     'movies',
     'literature',
     'sports',
+    'web',
 ];
 ?>
 
@@ -104,20 +104,27 @@ $game['categories'] = [
         </div>
     </div>
     <div class="game__word">
-        <div id="game-ready"
-             data-old-text="<?php echo $lang['game.get-ready']; ?>"><?php echo $lang['game.get-ready']; ?></div>
-        <div id="game-word" style="display: none"></div>
-        <div id="game-over" style="display: none">
-            <?php echo $lang['game.over'] ?><br><br>
-            <button id="show-results" class="btn btn-block">
-                <?php echo $lang['app.show-results']; ?>
-            </button>
-            <button class="back-to-menu btn btn-block">
-                <?php echo $lang['app.back-to-menu']; ?>
-            </button>
+
+        <div class="game__word-top">
+            <div id="game-ready" data-old-text="<?php echo $lang['game.get-ready']; ?>">
+                <?php echo $lang['game.get-ready']; ?>
+            </div>
+            <div id="game-word" style="display: none"></div>
+            <div id="game-over" style="display: none">
+                <?php echo $lang['game.over'] ?><br><br>
+                <button id="show-results" class="btn btn-block">
+                    <?php echo $lang['app.show-results']; ?>
+                </button>
+                <button class="back-to-menu btn btn-block">
+                    <?php echo $lang['app.back-to-menu']; ?>
+                </button>
+            </div>
+            <div id="game-error" style="display: none"><?php echo $lang['game.error']; ?></div>
         </div>
-        <div id="game-error" style="display: none"><?php echo $lang['game.error']; ?></div>
+
+        <div id="game-buzzwords" class="game__buzzwords" style="display: none"></div>
     </div>
+
     <div class="game__buttons">
         <button id="game__disacard" class="game__button btn btn-red is-disabled" disabled="disabled">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 208">
