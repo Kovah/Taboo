@@ -1,0 +1,54 @@
+.category-select {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: $white;
+  text-shadow: 0 1px 2px rgba($body-color, .2);
+
+  &__category {
+    flex: 0 0 100%;
+    margin: $spacer-1 0;
+
+    @media screen and (min-width: $screen-md) {
+      flex: 0 0 calc(50% - #{$spacer-1 * 2});
+      margin: $spacer-1;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      flex: 0 0 calc(33% - #{$spacer-1 * 2});
+    }
+
+    label {
+      position: relative;
+      display: block;
+      padding: $spacer;
+      cursor: pointer;
+      overflow: hidden;
+      height: 100%;
+      vertical-align: middle;
+
+      &:after {
+        position: absolute;
+        right: -10px;
+        top: calc(50% - 25px);
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: url("assets/checkmark.svg") center center no-repeat;
+        background-size: 50px 50px;
+      }
+    }
+
+    input:checked {
+
+      + label {
+        opacity: 1;
+
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+}

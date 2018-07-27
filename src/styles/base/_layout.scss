@@ -1,0 +1,20 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  padding: $spacer;
+}
+
+#app {
+  min-height: 100vh;
+  background-color: $white;
+}
+
+.panel {
+  min-height: 100vh;
+  padding: $spacer;
+  max-width: $screen-lg;
+  margin: 0 auto;
+}

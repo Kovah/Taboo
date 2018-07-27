@@ -1,0 +1,23 @@
+.btn {
+  display: inline-block;
+  background-color: $btn-default-bg;
+  border: 0;
+  cursor: pointer;
+  color: $white;
+  padding: $btn-padding;
+  font-size: $font-size-base;
+
+  &:active {
+    background-color: darken($btn-default-bg, 5%);
+  }
+
+  &:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+  }
+
+  &--lg {
+    padding: $btn-padding-lg;
+    font-size: $font-size-lg;
+  }
+}

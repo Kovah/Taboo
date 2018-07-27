@@ -1,0 +1,105 @@
+// Colors
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+$blue: #1e88e5;
+$indigo: #5e35b1;
+$purple: #8e24aa;
+$pink: #d81b60;
+$red: #e53935;
+$orange: #fb8c00;
+$yellow: #fdd835;
+$green: #43a047;
+$teal: #00acc1;
+$cyan: #039be5;
+
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+);
+
+$primary: $green;
+
+$body-color: $gray-800;
+$body-bg: $gray-100;
+
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: $primary;
+$link-hover-decoration: underline;
+
+// Screen sizes
+$screen-xs: 0;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+// Spacers
+$spacer: 1rem;
+
+$spacer-0: 0;
+$spacer-1: $spacer * .25;
+$spacer-2: $spacer * .5;
+$spacer-3: $spacer * 1;
+$spacer-4: $spacer * 1.5;
+$spacer-5: $spacer * 3;
+
+// Font Vars
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-weight-base: 400;
+$line-height-base: 1.5;
+
+$font-size-xs: .65rem;
+$font-size-sm: .85rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.3rem;
+$font-size-xl: 1.6rem;
+
+
+// Margins
+$headings-margin-bottom: $spacer-2;
+$paragraph-margin-bottom: $spacer-2;
+
+// Forms
+$form-group-margin: $spacer-2;
+
+$input-bg: $body-bg;
+$input-border-width: 1px;
+$input-border-color: $gray-600;
+$input-padding-x: $spacer-3;
+$input-padding-y: $spacer-2;
+$input-padding: $input-padding-y $input-padding-x;
+
+$input-active-border-color: $gray-900;
+$input-active-outline-width: 2px;
+$input-active-outline-color: $gray-300;
+
+// Buttons
+$btn-default-bg: $gray-900;
+$btn-padding-x: $spacer-3;
+$btn-padding-y: $spacer-2;
+$btn-padding: $btn-padding-y $btn-padding-x;
+
+$btn-padding-x-lg: $spacer-4;
+$btn-padding-y-lg: $spacer-3;
+$btn-padding-lg: $btn-padding-y-lg $btn-padding-x-lg;

@@ -1,0 +1,22 @@
+.form {
+
+  &__group {
+    margin-bottom: $paragraph-margin-bottom;
+  }
+}
+
+input:not([type=checkbox]):not([type=radio]) {
+  display: block;
+  width: 100%;
+  background-color: $input-bg;
+  border: $input-border-width solid $input-border-color;
+  color: $body-color;
+  padding: $input-padding;
+  font-size: $font-size-lg;
+
+  &:focus {
+    border-color: $input-active-border-color;
+    outline: $input-active-outline-width solid $input-active-outline-color;
+    box-shadow: none;
+  }
+}

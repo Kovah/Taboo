@@ -1,0 +1,9 @@
+.menu-buttons {
+
+  padding: $spacer-5 0;
+  text-align: center;
+
+  .btn + .btn {
+    margin-left: $spacer;
+  }
+}

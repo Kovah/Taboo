@@ -1,0 +1,10 @@
+.hidden {
+  display: none;
+}
+
+// Generate color backgrounds
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}
