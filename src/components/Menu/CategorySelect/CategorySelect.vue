@@ -1,7 +1,7 @@
 <template>
   <div class="category-select">
-    <Category v-for="(category, index) in categories" :key="category.id"
-      :cat-id="category.id" :text="category.text" :color="colors[index]" :cat-index="index"/>
+    <Category v-for="(category, key, index) in categories" :key="key"
+      :cat-id="key" :text="category.text" :color="colors[index]" :cat-index="index"/>
   </div>
 </template>
 
