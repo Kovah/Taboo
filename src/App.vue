@@ -1,18 +1,8 @@
 <template>
 
   <div id="app">
-    <div id="menu" class="panel">
-      <Menu/>
-    </div>
-    <div id="game" class="panel">
-
-    </div>
-    <div id="results" class="panel">
-
-    </div>
-    <div id="highscores" class="panel">
-
-    </div>
+    <Menu/>
+    <Game/>
   </div>
 
 </template>
@@ -20,12 +10,14 @@
 <script>
   import GameEngine from './components/GameEngine';
   import Menu from './components/Menu/Menu';
+  import Game from './components/Game/Game';
 
   export default {
     name: 'app',
     components: {
       GameEngine,
-      Menu
+      Menu,
+      Game
     }
   };
 </script>

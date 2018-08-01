@@ -1,5 +1,9 @@
-.intro {
-  //
+#menu {
+  height: 100vh;
+  overflow: auto;
+  border: $spacer solid $body-bg;
+  padding: $spacer;
+  background: $white;
 }
 
 @import "Logo/logo";

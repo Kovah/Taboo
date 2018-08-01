@@ -1,11 +1,17 @@
 <template>
-  <div class="menu">
-    <Logo/>
-    <HowTo/>
-    <PlayerForm/>
-    <CategorySelect/>
-    <MenuButtons/>
+
+  <div id="menu">
+    <div class="container">
+
+      <Logo/>
+      <HowTo/>
+      <PlayerForm/>
+      <CategorySelect/>
+      <MenuButtons/>
+
+    </div>
   </div>
+
 </template>
 
 <script>

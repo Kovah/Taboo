@@ -4,9 +4,11 @@
 
 @import "variables";
 @import "base/reboot";
+@import "base/typo";
 @import "base/layout";
 @import "base/btn";
 @import "base/forms";
 @import "base/helper";
 
 @import "../components/Menu/menu";
+@import "../components/Game/game";

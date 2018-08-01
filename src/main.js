@@ -35,6 +35,10 @@ const store = new Vuex.Store({
     selectCategory (state, newCategory) {
       state.selectedCategory = newCategory;
       console.log('Category changed to ' + newCategory);
+    },
+    startGame (state, start) {
+      state.gameStarted = start;
+      console.log('Game started by player ' +  state.playerName);
     }
   }
 });
