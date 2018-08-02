@@ -3,7 +3,9 @@
   <transition name="panel-active">
     <div id="game" class="panel" v-if="showGamePanel">
 
-      <h1>Game Panel</h1>
+      <GameHeader/>
+      <GameContent/>
+      <GameButtons/>
 
     </div>
   </transition>
@@ -11,14 +13,19 @@
 </template>
 
 <script>
-  //import Logo from './Logo/Logo';
+  import GameHeader from './GameHeader/GameHeader';
+  import GameContent from './GameContent/GameContent';
+  import GameButtons from './GameButtons/GameButtons';
 
   export default {
     name: 'Game',
-    components: {},
+    components: {
+      GameHeader,
+      GameContent,
+      GameButtons
+    },
     computed: {
       showGamePanel () {
-        if (this.$store.state.gameStarted) console.log('Game started');
         return this.$store.state.gameStarted;
       }
     }

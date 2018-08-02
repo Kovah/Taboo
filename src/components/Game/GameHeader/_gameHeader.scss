@@ -1,0 +1,50 @@
+.game-header {
+
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 5%;
+
+  &__timer {
+    position: relative;
+    flex: 0 1 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $btn-default-bg;
+    color: $btn-default-color;
+  }
+
+  &__timer-left {
+    z-index: 210;
+  }
+
+  &__timer-progress {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 205;
+    background: $red;
+  }
+
+  &__score {
+    flex: 0 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--success {
+      color: $green;
+    }
+
+    &--fail {
+      color: $red;
+    }
+  }
+
+  &__stop-btn {
+    flex: 0 1 25%;
+  }
+}

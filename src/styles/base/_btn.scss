@@ -1,14 +1,17 @@
 .btn {
   display: inline-block;
+  width: auto;
+  height: auto;
   background-color: $btn-default-bg;
   border: 0;
   cursor: pointer;
-  color: $white;
+  color: $btn-default-color;
   padding: $btn-padding;
   font-size: $font-size-base;
 
+  // States
   &:active {
-    background-color: darken($btn-default-bg, 5%);
+    background-color: darken($btn-default-bg, 7%);
   }
 
   &:disabled {
@@ -16,8 +19,34 @@
     cursor: not-allowed;
   }
 
+  // Size variants
   &--lg {
     padding: $btn-padding-lg;
     font-size: $font-size-lg;
+  }
+
+  // Color variants
+  &--success {
+    background-color: $green;
+
+    &:active {
+      background-color: darken($green, 7%);
+    }
+  }
+
+  &--fail {
+    background-color: $red;
+
+    &:active {
+      background-color: darken($red, 7%);
+    }
+  }
+
+  // Buttons with icons in it
+  svg, img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 80%;
+    margin-right: $spacer;
   }
 }

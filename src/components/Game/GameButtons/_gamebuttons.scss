@@ -1,0 +1,16 @@
+.game-buttons {
+  display: flex;
+  flex: 1 0 100%;
+  height: 45%;
+}
+
+.game-button {
+
+  flex: 1 0 50%;
+  text-align: center;
+
+  img {
+    max-width: 20vw;
+    opacity: .5;
+  }
+}

@@ -1,0 +1,39 @@
+.game-content {
+  flex: 1 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50%;
+
+  &__keyword {
+    flex: 1 1 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__buzzwords {
+    flex: 1 1 100%;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: $spacer;
+    background-color: rgba($red, .1);
+  }
+
+  &__buzzword {
+    flex: 1 1 100%;
+    padding: $spacer-1 $spacer;
+    color: darken($red, 20%);
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

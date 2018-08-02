@@ -85,7 +85,7 @@ $font-size-h3: $font-size-lg;
 
 
 // Margins
-$headings-margin-bottom: $spacer-2;
+$headings-margin-bottom: 0;
 $paragraph-margin-bottom: $spacer-2;
 
 // Forms
@@ -104,6 +104,7 @@ $input-active-outline-color: $gray-300;
 
 // Buttons
 $btn-default-bg: $gray-900;
+$btn-default-color: $white;
 $btn-padding-x: $spacer-3;
 $btn-padding-y: $spacer-2;
 $btn-padding: $btn-padding-y $btn-padding-x;
