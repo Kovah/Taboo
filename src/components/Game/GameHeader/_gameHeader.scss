@@ -58,6 +58,14 @@
 
   &__stop-btn {
     flex: 0 1 25%;
+
+    span {
+      display: none;
+
+      @media screen and (min-width: $screen-md) {
+        display: inline;
+      }
+    }
   }
 }
 

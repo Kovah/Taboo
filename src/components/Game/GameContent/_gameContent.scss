@@ -3,6 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   height: 60%;
+  word-break: break-all;
+  hyphens: auto;
 
   &__endpanel {
     flex: 1 1 100%;

@@ -4,6 +4,12 @@
   text-align: center;
 
   .btn + .btn {
-    margin-left: $spacer;
+    margin-top: $spacer;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    .btn + .btn {
+      margin-left: $spacer;
+    }
   }
 }
