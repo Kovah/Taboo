@@ -17,7 +17,7 @@
   export default {
     name: 'HighscoresButtons',
     computed: {
-      hasHighscores() {
+      hasHighscores () {
         return this.$store.state.highscores.length > 0;
       }
     },

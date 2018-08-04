@@ -11,6 +11,6 @@
 <script>
   export default {
     name: 'Highscore',
-    props: ['highscore', 'highscoreIndex'],
+    props: ['highscore', 'highscoreIndex']
   };
 </script>

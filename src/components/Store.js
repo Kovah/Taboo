@@ -163,7 +163,7 @@ const store = new Vuex.Store({
     },
 
     deleteHighscores (state) {
-      if (!confirm("Highscores löschen?")) {
+      if (!confirm('Highscores löschen?')) {
         return;
       }
 
@@ -172,7 +172,7 @@ const store = new Vuex.Store({
       if (typeof(Storage) !== 'undefined') {
         localStorage.removeItem('highscores');
       }
-    },
+    }
   }
 });
 

@@ -36,13 +36,13 @@
       getBuzzwords () {
         return this.$store.state.buzzwords;
       },
-      gameStarted() {
+      gameStarted () {
         return this.$store.state.gameStarted;
       },
-      displayEndpanel() {
+      displayEndpanel () {
         return !(this.$store.state.gameStarted || this.$store.state.gameCountdown);
       },
-      displayBuzzwords() {
+      displayBuzzwords () {
         return this.$store.state.buzzwords.length > 0 && this.$store.state.gameStarted;
       }
     },

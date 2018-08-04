@@ -19,7 +19,8 @@
           </tr>
           </thead>
           <tbody>
-          <Highscore v-for="(highscore, index) in highscores" :key="index" :highscore="highscore" :highscoreIndex="index"/>
+          <Highscore v-for="(highscore, index) in highscores" :key="index" :highscore="highscore"
+            :highscoreIndex="index"/>
           </tbody>
         </table>
       </div>
