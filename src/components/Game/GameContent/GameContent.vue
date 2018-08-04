@@ -43,7 +43,7 @@
         return !(this.$store.state.gameStarted || this.$store.state.gameCountdown);
       },
       displayBuzzwords() {
-        return this.$store.state.buzzwords.length > 0;
+        return this.$store.state.buzzwords.length > 0 && this.$store.state.gameStarted;
       }
     },
     methods: {
