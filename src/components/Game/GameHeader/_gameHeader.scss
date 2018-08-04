@@ -11,12 +11,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $btn-default-bg;
-    color: $btn-default-color;
+    background: $gray-100;
+    color: $body-color;
   }
 
   &__timer-left {
     z-index: 210;
+
+    &--crit {
+      font-weight: bold;
+      color: $red;
+      animation: countdownAnim 1s infinite ease-out;
+      animation-fill-mode: both;
+    }
   }
 
   &__timer-progress {
@@ -26,7 +33,13 @@
     left: 0;
     height: 100%;
     z-index: 205;
-    background: $red;
+    background-color: rgba($red, .1);
+    transition: background-color .5s ease-out;
+
+    &--crit {
+      background-color: rgba($red, .3);
+      transition: background-color .5s ease-out;
+    }
   }
 
   &__score {
@@ -34,6 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: $font-size-lg;
 
     &--success {
       color: $green;
@@ -46,5 +60,14 @@
 
   &__stop-btn {
     flex: 0 1 25%;
+  }
+}
+
+@keyframes countdownAnim {
+  0%   {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.2);
   }
 }
