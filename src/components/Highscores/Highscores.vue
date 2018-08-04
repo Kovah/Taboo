@@ -16,6 +16,7 @@
             <th>Kategorie</th>
             <th><img src="@/assets/check-blk.svg" alt="&check;" width="16px"></th>
             <th><img src="@/assets/cross-blk.svg" alt="&cross;" width="16px"></th>
+            <th>Datum</th>
           </tr>
           </thead>
           <tbody>
@@ -25,7 +26,7 @@
         </table>
       </div>
 
-      <HighscoresButtons/>
+      <HighscoresButtons :hasHighscores="hasHighscores"/>
 
     </div>
   </transition>

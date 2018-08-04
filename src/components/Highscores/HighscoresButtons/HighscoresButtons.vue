@@ -16,11 +16,7 @@
 <script>
   export default {
     name: 'HighscoresButtons',
-    computed: {
-      hasHighscores () {
-        return this.$store.state.highscores.length > 0;
-      }
-    },
+    props: ['hasHighscores'],
     methods: {
       deleteHighscores () {
         this.$store.commit('deleteHighscores');

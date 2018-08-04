@@ -136,7 +136,8 @@ const store = new Vuex.Store({
       let highscore = {
         name: state.playerName,
         score: state.score,
-        category: state.selectedCategory
+        category: state.selectedCategory,
+        date: Date.now()
       };
 
       state.highscores.push(highscore);
