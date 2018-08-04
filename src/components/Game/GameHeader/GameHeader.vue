@@ -4,7 +4,7 @@
     <div class="game-header__timer">
       <div v-bind:class="'game-header__timer-left ' + timerClass">{{ computedGameTimer }}</div>
       <div v-bind:class="'game-header__timer-progress ' + progressClass"
-        v-bind:style="{width: gameProgress + '%'}"></div>
+        v-bind:style="{width: gameProgress + '%', transitionDuration: timerDuration + 's'}"></div>
     </div>
 
     <div class="game-header__score">
@@ -48,6 +48,9 @@
       }, 1000);
     },
     computed: {
+      timerDuration () {
+        return this.$store.state.timerDefault;
+      },
       timerClass () {
         return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__timer-left--crit' : '';
       },
@@ -58,7 +61,7 @@
         return this.gameTimer / this.$store.state.timerDefault * 100;
       },
       progressClass () {
-        return this.gameTimer < 11 ? 'game-header__timer-progress--crit' : '';
+        return this.gameTimer > 0 ? 'game-header__timer-progress--crit' : '';
       },
       scoreSuccess () {
         return this.$store.state.score.success;

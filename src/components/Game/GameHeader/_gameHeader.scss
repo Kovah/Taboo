@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $gray-100;
+    background: $gray-200;
     color: $body-color;
   }
 
@@ -33,12 +33,10 @@
     left: 0;
     height: 100%;
     z-index: 205;
-    background-color: rgba($red, .1);
-    transition: background-color .5s ease-out;
 
     &--crit {
-      background-color: rgba($red, .3);
-      transition: background-color .5s ease-out;
+      background-color: rgba($red, .5);
+      transition: background-color;
     }
   }
 
