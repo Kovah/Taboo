@@ -22,7 +22,7 @@
       startGame () {
         let player = this.$store.state.playerName;
         let cat = this.$store.state.selectedCategory;
-        this.$store.commit('startGame', true);
+        this.$store.commit('startCountdown');
         console.log(`Game started as player '${player}' with category ${cat}`);
       }
     }

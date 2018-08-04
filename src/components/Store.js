@@ -1,28 +1,43 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import GameData from './GameData';
 
 Vue.use(Vuex);
 
 // Create the game store
 const store = new Vuex.Store({
   state: {
-    playerReady: false,
-    categoryReady: true,
-    gameReady: false,
-    gameStarted: false,
-    playerName: '',
-    selectedCategory: 'animals',
+    // Defaults
     timerDefault: 60,
     countdownDefault: 4,
     gameInitText: 'Get ready!',
+
+    // General game data
+    playerName: '',
+    selectedCategory: 'animals',
+    availableCards: {},
+
+    // Menu states
+    playerReady: false,
+    categoryReady: true,
+    gameReady: false,
+
+    // Game states
+    showGamePanel: false,
+    gameCountdown: false,
+    gameStarted: false,
+
+    // Game data
     keyword: '',
     buzzwords: [],
     score: {
       success: 0,
-      fail: 0,
-    }
+      fail: 0
+    },
+    highscores: []
   },
   mutations: {
+    // Menu mutations
     playerReady (state, playername) {
       state.playerName = playername;
       state.gameReady = state.categoryReady;
@@ -38,22 +53,110 @@ const store = new Vuex.Store({
     },
     selectCategory (state, newCategory) {
       state.selectedCategory = newCategory;
+
       console.log('Category changed to ' + newCategory);
     },
-    startGame (state, start) {
-      state.gameStarted = start;
+
+    // Start the game countdown
+    startCountdown (state) {
+      state.showGamePanel = true;
+      state.gameCountdown = true;
       state.keyword = state.gameInitText;
-      console.log('Game started by player ' +  state.playerName);
+      state.availableCards = GameData.getCardsForCategory(state.selectedCategory);
+
+      console.log('Game started by player ' + state.playerName);
+    },
+
+    // Start or stop the game
+    startGame (state) {
+      state.gameStarted = true;
+      state.gameCountdown = false;
+      this.commit('setNewKeyword');
+
+      console.log('Game started');
     },
     stopGame (state) {
-      // @TODO Find solution to stop game without hiding the game panel
-      // state.gameStarted = false;
+      state.gameStarted = false;
+      this.commit('saveHighscore');
+
       console.log('Game stopped by player');
     },
+
+    // In-game mutations
+    commitSuccess (state) {
+      state.score.success++;
+      this.commit('setNewKeyword');
+    },
+    commitFail (state) {
+      state.score.fail++;
+      this.commit('setNewKeyword');
+    },
     setNewKeyword (state) {
-      // @TODO Get keyword and buzzwords randomly from current category json file
-      state.keyword = 'new Keyword';
-      state.buzzwords = ['buzzword 1', 'buzzword 2', 'buzzword 3'];
+      // Pick random property
+      let keys = Object.keys(state.availableCards);
+
+      if (typeof keys === 'undefined') {
+        // Stop the game if there are no cards left
+        this.commit('stopGame');
+        return;
+      }
+
+      let key = keys[keys.length * Math.random() << 0];
+      let result = state.availableCards[key];
+      delete state.availableCards[key];
+
+      // Parse words
+      let split = result.split('|');
+
+      let computedResult = {};
+      computedResult.word = split[0];
+
+      if (typeof split[1] !== 'undefined') {
+        computedResult.buzzwords = split[1].split(':');
+      } else {
+        computedResult.buzzwords = [];
+      }
+
+      state.keyword = computedResult.word;
+      state.buzzwords = computedResult.buzzwords;
+    },
+
+    // End-game mutations
+    resetGameState (state) {
+      state.availableCards = [];
+      state.keyword = '';
+      state.buzzwords = [];
+      state.score = {
+        success: 0,
+        fail: 0
+      };
+    },
+    saveHighscore (state) {
+      let highscore = {
+        name: state.playerName,
+        score: state.score
+      };
+
+      state.highscores.push(highscore);
+
+      if (typeof(Storage) !== 'undefined') {
+        // Save the highscore to the local storage is available
+        localStorage.setItem('highscores', JSON.stringify(state.highscores));
+      }
+    },
+
+    // Global actions
+    showMenu (state) {
+      state.gameStarted = false;
+      state.showGamePanel = false;
+
+      this.commit('resetGameState');
+    },
+    showHighscores (state) {
+      state.gameStarted = false;
+      console.log('Game stopped by player');
+
+      this.commit('resetGameState');
     }
   }
 });

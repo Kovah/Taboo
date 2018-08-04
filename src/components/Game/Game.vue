@@ -26,7 +26,7 @@
     },
     computed: {
       showGamePanel () {
-        return this.$store.state.gameStarted;
+        return this.$store.state.showGamePanel;
       }
     }
   };

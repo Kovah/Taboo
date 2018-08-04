@@ -3,13 +3,14 @@
 
     <div class="game-header__timer">
       <div v-bind:class="'game-header__timer-left ' + timerClass">{{ computedGameTimer }}</div>
-      <div v-bind:class="'game-header__timer-progress ' + progressClass" v-bind:style="{width: gameProgress + '%'}"></div>
+      <div v-bind:class="'game-header__timer-progress ' + progressClass"
+        v-bind:style="{width: gameProgress + '%'}"></div>
     </div>
 
     <div class="game-header__score">
-      <span class="game-header__score--success">{{ scoreSuccess }}</span>
-      <span>:</span>
       <span class="game-header__score--fail">{{ scoreFail }}</span>
+      <span>&nbsp;:&nbsp;</span>
+      <span class="game-header__score--success">{{ scoreSuccess }}</span>
     </div>
 
     <button type="button" class="btn game-header__stop-btn" id="game-stop"
@@ -41,7 +42,6 @@
 
         if (this.gameCountdown === 0) {
           // Let the game set a new keyword and start the actual game if countdown reaches zero
-          this.$store.commit('setNewKeyword');
           this.startGame();
           clearInterval(this.gameCountdownInterval);
         }
@@ -55,7 +55,7 @@
         return this.gameTimer > 0 ? this.gameTimer : '';
       },
       gameProgress () {
-        return this.gameTimer / this.$store.state.timerDefault * 100
+        return this.gameTimer / this.$store.state.timerDefault * 100;
       },
       progressClass () {
         return this.gameTimer < 11 ? 'game-header__timer-progress--crit' : '';
@@ -72,7 +72,7 @@
     },
     methods: {
       startGame () {
-        console.log('Game Timer started');
+        this.$store.commit('startGame');
 
         this.gameTimer = this.$store.state.timerDefault;
 
@@ -80,7 +80,7 @@
           this.gameTimer--;
 
           if (this.gameTimer === 0) {
-            // stop the game if the game timer reaches zero
+            // Stop the game if the game timer reaches zero
             this.stopGame();
             clearInterval(this.gameTimerInterval);
           }

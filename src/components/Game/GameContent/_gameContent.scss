@@ -2,7 +2,20 @@
   flex: 1 0 100%;
   display: flex;
   flex-wrap: wrap;
-  height: 50%;
+  height: 60%;
+
+  &__endpanel {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__endpanel-content {
+    flex: 1 1 100%;
+    text-align: center;
+  }
 
   &__keyword {
     flex: 1 1 100%;
@@ -27,6 +40,7 @@
     flex: 1 1 100%;
     padding: $spacer-1 $spacer;
     color: darken($red, 20%);
+    font-size: $font-size-lg;
 
     &:first-child {
       padding-top: 0;
