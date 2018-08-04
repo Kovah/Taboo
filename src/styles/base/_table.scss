@@ -1,0 +1,27 @@
+.table-wrapper {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+table {
+  width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+
+  td, th {
+    padding: $spacer-2 $spacer;
+    vertical-align: top;
+    border-top: 1px solid $body-color;
+  }
+
+  thead {
+
+    th {
+      vertical-align: bottom;
+      border-bottom: 2px solid $body-color;
+    }
+  }
+}

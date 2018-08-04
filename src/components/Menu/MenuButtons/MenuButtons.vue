@@ -3,7 +3,7 @@
     <button type="button" class="btn btn--lg" id="start-game" v-bind:disabled="startDisabled" v-on:click="startGame">
       Spiel Starten
     </button>
-    <button type="button" class="btn btn--lg" id="show-highscores">
+    <button type="button" class="btn btn--lg" id="show-highscores" v-on:click="showHighscores">
       Highscores anzeigen
     </button>
   </div>
@@ -24,6 +24,9 @@
         let cat = this.$store.state.selectedCategory;
         this.$store.commit('startCountdown');
         console.log(`Game started as player '${player}' with category ${cat}`);
+      },
+      showHighscores () {
+        this.$store.commit('showHighscores');
       }
     }
   };

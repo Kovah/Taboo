@@ -1,0 +1,12 @@
+#highscores {
+  z-index: 300;
+}
+
+.highscores-table {
+
+  &__wrapper {
+    margin: $spacer-4 0;
+  }
+}
+
+@import "Highscore/highscore";

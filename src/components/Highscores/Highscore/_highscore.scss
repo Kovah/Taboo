@@ -1,0 +1,10 @@
+.highscore {
+
+  &__score-success {
+    color: $green;
+  }
+
+  &__score-fail {
+    color: $red;
+  }
+}

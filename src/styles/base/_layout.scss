@@ -5,6 +5,10 @@ body {
   padding: 0;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 #app {
   position: relative;
   height: 100%;

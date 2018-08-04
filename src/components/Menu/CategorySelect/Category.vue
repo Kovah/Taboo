@@ -12,20 +12,6 @@
   export default {
     name: 'Category',
     props: ['catId', 'text', 'color', 'catIndex'],
-    computed: {
-      _catId: function () {
-        return this.catId;
-      },
-      _text: function () {
-        return this.text;
-      },
-      _color: function () {
-        return this.color;
-      },
-      _catIndex: function () {
-        return this.catIndex;
-      }
-    },
     data () {
       return {
         isActive: false

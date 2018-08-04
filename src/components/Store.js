@@ -22,8 +22,9 @@ const store = new Vuex.Store({
     categoryReady: true,
     gameReady: false,
 
-    // Game states
+    // App states
     showGamePanel: false,
+    showHighscorePanel: false,
     gameCountdown: false,
     gameStarted: false,
 
@@ -150,15 +151,28 @@ const store = new Vuex.Store({
     showMenu (state) {
       state.gameStarted = false;
       state.showGamePanel = false;
+      state.showHighscorePanel = false;
 
       this.commit('resetGameState');
     },
     showHighscores (state) {
       state.gameStarted = false;
-      console.log('Game stopped by player');
+      state.showHighscorePanel = true;
 
       this.commit('resetGameState');
-    }
+    },
+
+    deleteHighscores (state) {
+      if (!confirm("Highscores löschen?")) {
+        return;
+      }
+
+      state.highscores = [];
+
+      if (typeof(Storage) !== 'undefined') {
+        localStorage.removeItem('highscores');
+      }
+    },
   }
 });
 
