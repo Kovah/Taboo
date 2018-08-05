@@ -23,16 +23,16 @@ $teal: #00acc1;
 $cyan: #039be5;
 
 $colors: (
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
 );
 
 $primary: $blue;
@@ -82,11 +82,13 @@ $font-size-h1: $font-size-xl * 2;
 $font-size-h2: $font-size-xl;
 $font-size-h3: $font-size-lg;
 
-
-
 // Margins
 $headings-margin-bottom: 0;
 $paragraph-margin-bottom: $spacer-2;
+
+// Panels
+$panel-anim-speed: .35s;
+$panel-anim-timing: cubic-bezier(0.395, 0.610, 0.505, 1.330);
 
 // Forms
 $form-group-margin: $spacer-2;

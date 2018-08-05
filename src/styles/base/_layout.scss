@@ -26,15 +26,15 @@ body {
   z-index: 100;
   padding: $spacer;
   background: $white;
-  transition: left .2s ease-out;
+  transition: left $panel-anim-speed $panel-anim-timing;
 }
 
 .panel-active-enter-active, .panel-active-leave-active {
-  transition: left .2s ease-out;
+  transition: left $panel-anim-speed $panel-anim-timing;
 }
 .panel-active-enter, .panel-active-leave-to {
   left: 100vw;
-  transition: left .2s ease-out;
+  transition: left $panel-anim-speed $panel-anim-timing reverse;
 }
 
 .container {

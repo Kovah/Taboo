@@ -55,7 +55,7 @@
     },
     methods: {
       showHighscores () {
-        this.$store.commit('showHighscores');
+        this.$store.commit('showHighscores', true);
       },
       showMenu () {
         this.$store.commit('showMenu');

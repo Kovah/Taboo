@@ -156,10 +156,18 @@ const store = new Vuex.Store({
 
       this.commit('resetGameState');
     },
-    showHighscores (state) {
+    showHighscores (state, afterGamePanel) {
       state.gameStarted = false;
       state.showGamePanel = false;
-      state.showHighscorePanel = true;
+
+      if (afterGamePanel) {
+        // Delay the animation of the highscores panel if coming from the game panel
+        window.setTimeout(()=>{
+          state.showHighscorePanel = true;
+        }, 300);
+      } else {
+        state.showHighscorePanel = true;
+      }
 
       this.commit('resetGameState');
     },
