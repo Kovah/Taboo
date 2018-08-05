@@ -19,6 +19,9 @@
       Menu,
       Game,
       Highscores
+    },
+    mounted() {
+      this.$store.commit('initHighscores');
     }
   };
 </script>

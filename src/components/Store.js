@@ -132,6 +132,43 @@ const store = new Vuex.Store({
         fail: 0
       };
     },
+
+    // Global actions
+    showMenu (state) {
+      state.gameStarted = false;
+      state.showGamePanel = false;
+      state.showHighscorePanel = false;
+
+      this.commit('resetGameState');
+    },
+
+    // Highscore actions
+    initHighscores(state) {
+      if (state.highscores.length === 0) {
+        // Try to get the highscores from local storage
+        let localScores = JSON.parse(localStorage.getItem('highscores'));
+        if (localScores != null) {
+          console.log('Old highscores loaded');
+          state.highscores = localScores;
+        }
+      }
+
+      this.commit('sortHighscores');
+    },
+    sortHighscores(state) {
+      // Sort the highscores by total score descending
+      state.highscores = state.highscores.sort((a, b) => {
+        // Calculate a total score by substrating the fail from the success cards
+        let totalScoreA = a.score.success - a.score.fail;
+        let totalScoreB = b.score.success - b.score.fail;
+
+        if (totalScoreA < totalScoreB)
+          return 1;
+        if (totalScoreA > totalScoreB)
+          return -1;
+        return 0;
+      });
+    },
     saveHighscore (state) {
       let highscore = {
         name: state.playerName,
@@ -146,15 +183,8 @@ const store = new Vuex.Store({
         // Save the highscore to the local storage is available
         localStorage.setItem('highscores', JSON.stringify(state.highscores));
       }
-    },
 
-    // Global actions
-    showMenu (state) {
-      state.gameStarted = false;
-      state.showGamePanel = false;
-      state.showHighscorePanel = false;
-
-      this.commit('resetGameState');
+      this.commit('sortHighscores');
     },
     showHighscores (state, afterGamePanel) {
       state.gameStarted = false;
@@ -171,7 +201,6 @@ const store = new Vuex.Store({
 
       this.commit('resetGameState');
     },
-
     deleteHighscores (state) {
       if (!confirm('Highscores löschen?')) {
         return;
