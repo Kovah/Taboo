@@ -9,6 +9,7 @@
         <PlayerForm/>
         <CategorySelect/>
         <MenuButtons/>
+        <MenuFooter/>
 
       </div>
     </div>
@@ -22,6 +23,7 @@
   import PlayerForm from './PlayerForm/PlayerForm';
   import CategorySelect from './CategorySelect/CategorySelect';
   import MenuButtons from './MenuButtons/MenuButtons';
+  import MenuFooter from './MenuFooter/MenuFooter';
 
   export default {
     name: 'Menu',
@@ -30,7 +32,8 @@
       HowTo,
       PlayerForm,
       CategorySelect,
-      MenuButtons
+      MenuButtons,
+      MenuFooter
     },
     computed: {
       showHighscorePanel () {
