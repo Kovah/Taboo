@@ -1,37 +1,53 @@
-# KVH Tabu
+# KVH Taboo
 
-_A Tabu-based game for your browser_
+_A Taboo-based game for your browser_
+
+![Latest version](https://img.shields.io/github/tag/Kovah/Taboo.svg) ![Downloads](https://img.shields.io/github/downloads/Kovah/Taboo/total.svg) ![License](https://img.shields.io/github/license/Kovah/Taboo.svg)
 
 
 ## Installation
 
 ### Requirements
 
+This game requires no PHP or other server-side langauge. It needs nothing more than a simple web
+server that delivers HTML files and a modern browser.
+
 ### Installation from Download
 
+Go to the [releases](https://github.com/Kovah/Taboo/releases) page and download the latest "taboo-build.zip"
+package. Extract the files into your webserver directory and start your browser. Done.
 
 ### Installation from Source
 
-Project setup
+Building the game from source requires [Node](https://nodejs.org/en/) installed on your machine.
+
+Install all dependencies using yarn or NPM.
 ```
 yarn install
+OR
+npm install
 ```
 
 Compiles and hot-reloads for development
 ```
 yarn run serve
+OR
+npm run serve
 ```
 
 Compiles and minifies for production
 ```
 yarn run build
+OR
+npm run build
 ```
+ 
  
 ## Contributing
 
 ### Found a bug or typo? Have a feature request?
 
-Please open a [new issue](https://github.com/Kovah/Tabu/issues/new) and explain what's wrong
+Please open a [new issue](https://github.com/Kovah/Taboo/issues/new) and explain what's wrong
 or what needs to be improved.
 
 ### Game Mechanics
@@ -42,18 +58,9 @@ your pull request to be closed.
 
 ### Words
 
-To contribute words, just add them to the appropriate category with the following scheme:
-
-    Main Word|Buzzword 1:Buzzword, with sp3c!al char$:Buzzword 3
-
-Please notice that words cannot contain any of the following characters:
-
-    Vertical stoke      |
-    Double points       :
-    Quotation marks     "
-    Backslashes         \
-
-See _Game Mechanics_ if you want to add a new category.
+All words (or cards) are managed by the [taboo-data](https://www.npmjs.com/package/taboo-data) package.
+Please visit the [git repo of the package](https://github.com/Kovah/Taboo-Data) for more information
+about contributing.
 
 
 ---
