@@ -47,7 +47,7 @@
     font-size: $font-size-h2;
     font-weight: $font-weight-headings;
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-lg) {
       font-size: $font-size-h1;
     }
   }
@@ -59,8 +59,12 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: $spacer;
+    padding: $spacer-2;
     background-color: rgba($red, .1);
+
+    @media screen and (min-width: $screen-sm) {
+      padding: $spacer;
+    }
   }
 
   &__buzzword {
@@ -69,7 +73,7 @@
     color: darken($red, 20%);
     font-size: $font-size-base;
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-lg) {
       font-size: $font-size-lg;
     }
 

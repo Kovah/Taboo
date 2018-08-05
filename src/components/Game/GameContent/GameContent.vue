@@ -30,11 +30,6 @@
 <script>
   export default {
     name: 'GameContent',
-    data () {
-      return {
-        theKeyword: ''
-      }
-    },
     computed: {
       getKeyword () {
         this.theKeyword = this.$store.state.keyword;
