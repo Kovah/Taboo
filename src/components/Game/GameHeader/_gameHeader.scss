@@ -1,0 +1,84 @@
+.game-header {
+
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+
+  @media screen and (min-width: $screen-md) {
+    height: 5%;
+  }
+
+  &__timer {
+    position: relative;
+    flex: 0 1 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $gray-200;
+    color: $body-color;
+  }
+
+  &__timer-left {
+    z-index: 210;
+
+    &--crit {
+      font-weight: bold;
+      color: $red;
+      animation: countdownAnim 1s infinite ease-out;
+      animation-fill-mode: both;
+    }
+  }
+
+  &__timer-progress {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 205;
+
+    &--crit {
+      background-color: rgba($red, .5);
+      transition: background-color;
+    }
+  }
+
+  &__score {
+    flex: 0 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-lg;
+
+    &--success {
+      color: $green;
+    }
+
+    &--fail {
+      color: $red;
+    }
+  }
+
+  &__stop-btn {
+    flex: 0 1 25%;
+
+    span {
+      display: none;
+      margin-left: $spacer;
+
+      @media screen and (min-width: $screen-md) {
+        display: inline;
+      }
+    }
+  }
+}
+
+@keyframes countdownAnim {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}

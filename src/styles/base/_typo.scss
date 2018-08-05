@@ -1,0 +1,18 @@
+h1, h2, h3, h4, h5 {
+  margin-bottom: $headings-margin-bottom;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-headings;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-headings;
+}
+
+h3 {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-headings;
+}

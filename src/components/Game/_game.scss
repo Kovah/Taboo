@@ -1,0 +1,9 @@
+#game {
+  z-index: 200;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@import "GameHeader/gameHeader";
+@import "GameContent/gameContent";
+@import "GameButtons/gamebuttons";

@@ -1,0 +1,13 @@
+.highscores-buttons {
+  margin: $spacer 0;
+
+  .btn + .btn {
+    margin-top: $spacer;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    .btn + .btn {
+      margin-left: $spacer;
+    }
+  }
+}

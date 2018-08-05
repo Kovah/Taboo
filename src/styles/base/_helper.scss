@@ -1,0 +1,14 @@
+.hidden {
+  display: none;
+}
+
+// Generate color backgrounds
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background-color: $value;
+
+    input:focus + & {
+      background-color: darken($value, $focus-modifier);
+    }
+  }
+}

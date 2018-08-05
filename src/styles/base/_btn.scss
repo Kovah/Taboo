@@ -1,0 +1,66 @@
+.btn {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background-color: $btn-default-bg;
+  border: 0;
+  cursor: pointer;
+  color: $btn-default-color;
+  padding: $btn-padding;
+  font-size: $font-size-base;
+
+  // States
+  &:hover,
+  &:focus {
+    background-color: darken($btn-default-bg, $focus-modifier);
+  }
+
+  &:active {
+    background-color: darken($btn-default-bg, $active-modifier);
+  }
+
+  &:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+  }
+
+  // Size variants
+  &--lg {
+    padding: $btn-padding-lg;
+    font-size: $font-size-lg;
+  }
+
+  // Color variants
+  &--success {
+    background-color: $green;
+
+    &:hover,
+    &:focus {
+      background-color: darken($green, $focus-modifier);
+    }
+
+    &:active {
+      background-color: darken($green, $active-modifier);
+    }
+  }
+
+  &--fail {
+    background-color: $red;
+
+    &:hover,
+    &:focus {
+      background-color: darken($red, $focus-modifier);
+    }
+
+    &:active {
+      background-color: darken($red, $active-modifier);
+    }
+  }
+
+  // Buttons with icons in it
+  svg, img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 80%;
+  }
+}

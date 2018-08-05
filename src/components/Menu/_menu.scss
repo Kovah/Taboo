@@ -1,0 +1,17 @@
+#menu {
+  height: calc(100vh - #{$spacer * 2});
+  overflow: auto;
+  padding: $spacer;
+  background: $white;
+}
+
+.menu__wrapper {
+  padding: $spacer;
+}
+
+@import "Logo/logo";
+@import "HowTo/howto";
+@import "PlayerForm/playerform";
+@import "CategorySelect/categoryselect";
+@import "MenuButtons/menubuttons";
+@import "MenuFooter/menuFooter";

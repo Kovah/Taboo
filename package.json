@@ -1,19 +1,22 @@
 {
-  "name": "kvh-tabu",
-  "version": "1.0.0",
-  "description": "A Tabu-based game for your browser",
-  "author": "Kovah.de",
+  "name": "kvh-taboo",
+  "version": "2.0.0",
   "private": true,
-  "license": "UNLICENSED",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
   "dependencies": {
-    "autoprefixer": "^6.4.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^1.2.1",
-    "jquery": "^3.1.0",
-    "load-grunt-tasks": "^3.5.2"
+    "es6-promise": "^4.2.4",
+    "taboo-data": "^0.0.4",
+    "vue": "^2.5.16",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-rc.7",
+    "@vue/cli-service": "^3.0.0-rc.7",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.16"
   }
 }

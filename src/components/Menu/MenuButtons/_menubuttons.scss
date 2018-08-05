@@ -1,0 +1,15 @@
+.menu-buttons {
+
+  padding: $spacer-5 0;
+  text-align: center;
+
+  .btn + .btn {
+    margin-top: $spacer;
+  }
+
+  @media screen and (min-width: $screen-sm) {
+    .btn + .btn {
+      margin-left: $spacer;
+    }
+  }
+}

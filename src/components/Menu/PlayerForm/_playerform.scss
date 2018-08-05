@@ -1,0 +1,15 @@
+.player-form {
+
+  padding: $spacer-4 0;
+
+  &__label {
+    display: block;
+    margin-bottom: $spacer-3;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
+
+  &__input {
+    //
+  }
+}

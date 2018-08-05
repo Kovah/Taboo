@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: linear-gradient(30deg, $teal 0%, $blue 100%);
+}
+
+#app {
+  position: relative;
+  height: 100%;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  padding: $spacer;
+  background: $white;
+  transition: left $panel-anim-speed $panel-anim-timing;
+}
+
+.panel-active-enter-active, .panel-active-leave-active {
+  transition: left $panel-anim-speed $panel-anim-timing;
+}
+.panel-active-enter, .panel-active-leave-to {
+  left: 100vw;
+  transition: left $panel-anim-speed $panel-anim-timing reverse;
+}
+
+.container {
+  max-width: $screen-lg;
+  margin: 0 auto;
+}
