@@ -158,6 +158,7 @@ const store = new Vuex.Store({
     },
     showHighscores (state) {
       state.gameStarted = false;
+      state.showGamePanel = false;
       state.showHighscorePanel = true;
 
       this.commit('resetGameState');

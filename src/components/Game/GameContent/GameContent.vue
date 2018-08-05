@@ -3,12 +3,13 @@
 
     <div class="game-content__endpanel" v-if="displayEndpanel">
       <div class="game-content__endpanel-content">
-        <h1>Spiel zuende!</h1>
+        <div class="game-content__endpanel-header">
+          Spiel zuende!
+        </div>
         <br>
         <button type="button" class="btn" id="game-show-highscore" v-on:click="showHighscores">
           Highscores anzeigen
         </button>
-        &nbsp;
         <button type="button" class="btn" id="game-back-to-menu" v-on:click="showMenu">
           Zurück zum Menü
         </button>
@@ -16,7 +17,7 @@
     </div>
 
     <div class="game-content__keyword" v-if="!displayEndpanel">
-      <h1>{{ getKeyword }}</h1>
+      {{ getKeyword }}
     </div>
 
     <div class="game-content__buzzwords" v-if="displayBuzzwords">
@@ -29,9 +30,15 @@
 <script>
   export default {
     name: 'GameContent',
+    data () {
+      return {
+        theKeyword: ''
+      }
+    },
     computed: {
       getKeyword () {
-        return this.$store.state.keyword;
+        this.theKeyword = this.$store.state.keyword;
+        return this.theKeyword;
       },
       getBuzzwords () {
         return this.$store.state.buzzwords;

@@ -1,7 +1,7 @@
 <template>
 
   <transition name="panel-active">
-    <div id="highscores" class="panel" v-if="showHighscorePanel">
+    <div id="highscores" class="panel panel--left" v-if="showHighscorePanel">
 
       <h1>Highscores</h1>
 

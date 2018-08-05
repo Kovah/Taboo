@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   height: 60%;
-  word-break: break-all;
+  word-break: break-word;
   hyphens: auto;
 
   &__endpanel {
@@ -14,9 +14,28 @@
     align-items: center;
   }
 
+  &__endpanel-header {
+    font-size: $font-size-h2;
+    font-weight: $font-weight-headings;
+
+    @media screen and (min-width: $screen-md) {
+      font-size: $font-size-h1;
+    }
+  }
+
   &__endpanel-content {
     flex: 1 1 100%;
     text-align: center;
+
+    .btn + .btn {
+      margin-top: $spacer;
+    }
+
+    @media screen and (min-width: $screen-sm) {
+      .btn + .btn {
+        margin-left: $spacer;
+      }
+    }
   }
 
   &__keyword {
@@ -25,6 +44,12 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    font-size: $font-size-h2;
+    font-weight: $font-weight-headings;
+
+    @media screen and (min-width: $screen-md) {
+      font-size: $font-size-h1;
+    }
   }
 
   &__buzzwords {
@@ -42,7 +67,11 @@
     flex: 1 1 100%;
     padding: $spacer-1 $spacer;
     color: darken($red, 20%);
-    font-size: $font-size-lg;
+    font-size: $font-size-base;
+
+    @media screen and (min-width: $screen-md) {
+      font-size: $font-size-lg;
+    }
 
     &:first-child {
       padding-top: 0;

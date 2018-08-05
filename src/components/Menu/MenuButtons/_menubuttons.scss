@@ -7,7 +7,7 @@
     margin-top: $spacer;
   }
 
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: $screen-sm) {
     .btn + .btn {
       margin-left: $spacer;
     }

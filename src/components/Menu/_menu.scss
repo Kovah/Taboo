@@ -1,9 +1,12 @@
 #menu {
-  height: 100vh;
+  height: calc(100vh - #{$spacer * 2});
   overflow: auto;
-  border: $spacer solid $body-bg;
   padding: $spacer;
   background: $white;
+}
+
+.menu__wrapper {
+  padding: $spacer;
 }
 
 @import "Logo/logo";

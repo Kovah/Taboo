@@ -3,7 +3,11 @@
   flex: 1 1 100%;
   display: flex;
   justify-content: space-between;
-  height: 5%;
+  height: 10%;
+
+  @media screen and (min-width: $screen-md) {
+    height: 5%;
+  }
 
   &__timer {
     position: relative;
@@ -61,6 +65,7 @@
 
     span {
       display: none;
+      margin-left: $spacer;
 
       @media screen and (min-width: $screen-md) {
         display: inline;

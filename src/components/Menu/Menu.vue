@@ -1,14 +1,16 @@
 <template>
 
-  <div id="menu">
-    <div class="container">
+  <div class="menu__wrapper">
+    <div id="menu" v-bind:style="{overflow: showGamePanel || showHighscorePanel ? 'hidden' : ''}">
+      <div class="container">
 
-      <Logo/>
-      <HowTo/>
-      <PlayerForm/>
-      <CategorySelect/>
-      <MenuButtons/>
+        <Logo/>
+        <HowTo/>
+        <PlayerForm/>
+        <CategorySelect/>
+        <MenuButtons/>
 
+      </div>
     </div>
   </div>
 
@@ -29,6 +31,14 @@
       PlayerForm,
       CategorySelect,
       MenuButtons
+    },
+    computed: {
+      showHighscorePanel () {
+        return this.$store.state.showHighscorePanel;
+      },
+      showGamePanel () {
+        return this.$store.state.showGamePanel;
+      }
     }
   };
 </script>

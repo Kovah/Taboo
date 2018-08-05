@@ -1,7 +1,11 @@
 .game-buttons {
   display: flex;
   flex: 1 0 100%;
-  height: 35%;
+  height: 30%;
+
+  @media screen and (min-width: $screen-md) {
+    height: 35%;
+  }
 }
 
 .game-button {

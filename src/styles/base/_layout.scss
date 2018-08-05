@@ -7,6 +7,8 @@ body {
 
 body {
   overflow-y: scroll;
+  overflow-x: hidden;
+  background: linear-gradient(30deg, $teal 0%, $blue 100%);
 }
 
 #app {
@@ -20,17 +22,19 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  width: 100vw;
   z-index: 100;
   padding: $spacer;
   background: $white;
-  //border: $spacer solid $body-bg;
+  transition: left .2s ease-out;
 }
 
 .panel-active-enter-active, .panel-active-leave-active {
-  transition: top .3s ease-out;
+  transition: left .2s ease-out;
 }
 .panel-active-enter, .panel-active-leave-to {
-  top: 100vh;
+  left: 100vw;
+  transition: left .2s ease-out;
 }
 
 .container {

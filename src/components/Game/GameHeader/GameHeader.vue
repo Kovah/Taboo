@@ -61,7 +61,7 @@
         return this.gameTimer / this.$store.state.timerDefault * 100;
       },
       progressClass () {
-        return this.gameTimer > 0 ? 'game-header__timer-progress--crit' : '';
+        return this.gameTimer > -1 ? 'game-header__timer-progress--crit' : '';
       },
       scoreSuccess () {
         return this.$store.state.score.success;
