@@ -65,7 +65,7 @@ const store = new Vuex.Store({
       state.keyword = state.gameInitText;
       state.availableCards = GameData.getCardsForCategory(state.selectedCategory);
 
-      console.log('Game started by player ' + state.playerName);
+      console.log('Game started by player ' + state.playerName + ' with category ' + state.selectedCategory);
     },
 
     // Start or stop the game
