@@ -10,8 +10,13 @@
   font-size: $font-size-base;
 
   // States
+  &:hover,
+  &:focus {
+    background-color: darken($btn-default-bg, $focus-modifier);
+  }
+
   &:active {
-    background-color: darken($btn-default-bg, 7%);
+    background-color: darken($btn-default-bg, $active-modifier);
   }
 
   &:disabled {
@@ -29,16 +34,26 @@
   &--success {
     background-color: $green;
 
+    &:hover,
+    &:focus {
+      background-color: darken($green, $focus-modifier);
+    }
+
     &:active {
-      background-color: darken($green, 7%);
+      background-color: darken($green, $active-modifier);
     }
   }
 
   &--fail {
     background-color: $red;
 
+    &:hover,
+    &:focus {
+      background-color: darken($red, $focus-modifier);
+    }
+
     &:active {
-      background-color: darken($red, 7%);
+      background-color: darken($red, $active-modifier);
     }
   }
 

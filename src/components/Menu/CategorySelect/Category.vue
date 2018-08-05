@@ -1,8 +1,8 @@
 <template>
-  <div v-bind:class="'category-select__category bg-' + color.id">
-    <input type="radio" name="category" class="hidden"
+  <div v-bind:class="'category-select__category'">
+    <input type="radio" name="category" class="category-select__input"
       :id="'cat-' + catId" v-bind:checked="catIndex === 0 ? 'checked' : ''">
-    <label v-bind:for="'cat-' + catId" @click="selectCategory">
+    <label v-bind:for="'cat-' + catId" v-bind:class="'bg-' + color.id" @click="selectCategory">
       {{ text }}
     </label>
   </div>

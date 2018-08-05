@@ -3,7 +3,7 @@
     <div class="form__group">
       <label for="player-name" class="player-form__label">Gib deinen Namen ein:</label>
       <input type="text" class="form__input player-form__input" id="player-name" name="player-name"
-        @keyup="processInput">
+        maxlength="30" @keyup="processInput">
     </div>
   </div>
 </template>

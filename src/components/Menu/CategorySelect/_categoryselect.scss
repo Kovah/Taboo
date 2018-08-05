@@ -51,4 +51,11 @@
       }
     }
   }
+
+  &__input {
+    position: absolute;
+    appearance: none;
+    width: 0;
+    height: 0;
+  }
 }
