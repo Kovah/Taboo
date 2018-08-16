@@ -2,7 +2,7 @@
 
 _A Taboo-based game for your browser_
 
-![Latest version](https://img.shields.io/github/tag/Kovah/Taboo.svg) ![Downloads](https://img.shields.io/github/downloads/Kovah/Taboo/total.svg) ![License](https://img.shields.io/github/license/Kovah/Taboo.svg)
+![Available Languages: DE](https://img.shields.io/badge/Available%20Languages-DE-blue.svg) ![Latest version](https://img.shields.io/github/tag/Kovah/Taboo.svg) ![Downloads](https://img.shields.io/github/downloads/Kovah/Taboo/total.svg) ![License](https://img.shields.io/github/license/Kovah/Taboo.svg)
 
 
 ## Installation
