@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "es6-promise": "^4.2.4",
-    "taboo-data": "^0.0.4",
+    "taboo-data": "^0.0.6",
     "vue": "^2.5.16",
     "vuex": "^3.0.1"
   },
