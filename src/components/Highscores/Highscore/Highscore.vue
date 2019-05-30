@@ -23,7 +23,7 @@
     },
     methods: {
       categoryName (category) {
-        return GameData.categories[category].text;
+        return GameData.getCategories()[category].text;
       }
     }
   };

@@ -6066,9 +6066,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-taboo-data@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/taboo-data/-/taboo-data-0.0.6.tgz#46cb4264bd28f4d830e2aeb240f32a4a47c5b8b9"
+taboo-data@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/taboo-data/-/taboo-data-1.0.1.tgz#ac17c6998b7a72801c1f11fdbf3fcc9a5a264623"
+  integrity sha512-SObiP3J0dCZUx8uW3wmCUDyT2W365A1oYgUyOcUNJJGnGpnX396aoeWfxM/2/HyfL3lBa9mM9y6aoWcv0+63xA==
 
 tapable@^1.0.0:
   version "1.0.0"

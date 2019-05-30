@@ -102,24 +102,12 @@ const store = new Vuex.Store({
         return;
       }
 
-      let key = keys[keys.length * Math.random() << 0];
-      let result = state.availableCards[key];
-      delete state.availableCards[key];
+      const keyword = keys[keys.length * Math.random() << 0];
+      const buzzwords = state.availableCards[keyword];
+      delete state.availableCards[keyword];
 
-      // Parse words
-      let split = result.split('|');
-
-      let computedResult = {};
-      computedResult.word = split[0];
-
-      if (typeof split[1] !== 'undefined') {
-        computedResult.buzzwords = split[1].split(':');
-      } else {
-        computedResult.buzzwords = [];
-      }
-
-      state.keyword = computedResult.word;
-      state.buzzwords = computedResult.buzzwords;
+      state.keyword = keyword;
+      state.buzzwords = buzzwords;
     },
 
     // End-game mutations
