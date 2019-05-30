@@ -1,8 +1,13 @@
 <p align="center"><img src="public/social_twitter.png" alt="KVH Taboo"></p>
 
-_A Taboo-based game for your browser_
+<p align="center"><b>A Taboo-based game for your browser</b></p>
 
-![Available Languages: DE](https://img.shields.io/badge/Available%20Languages-DE-blue.svg) ![Latest version](https://img.shields.io/github/tag/Kovah/Taboo.svg) ![Downloads](https://img.shields.io/github/downloads/Kovah/Taboo/total.svg) ![License](https://img.shields.io/github/license/Kovah/Taboo.svg)
+<p align="center">
+<img src="https://img.shields.io/badge/Available%20Languages-DE-blue.svg" alt="Available Languages: DE">
+<img src="https://img.shields.io/github/tag/Kovah/Taboo.svg" alt="Latest version">
+<img src="https://img.shields.io/github/downloads/Kovah/Taboo/total.svg" alt="Downloads">
+<img src="ttps://img.shields.io/github/license/Kovah/Taboo.svg" alt="License">
+</p>
 
 
 ## Installation
