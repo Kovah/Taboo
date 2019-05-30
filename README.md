@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/badge/Available%20Languages-DE-blue.svg" alt="Available Languages: DE">
 <img src="https://img.shields.io/github/tag/Kovah/Taboo.svg" alt="Latest version">
 <img src="https://img.shields.io/github/downloads/Kovah/Taboo/total.svg" alt="Downloads">
-<img src="ttps://img.shields.io/github/license/Kovah/Taboo.svg" alt="License">
+<img src="https://img.shields.io/github/license/Kovah/Taboo.svg" alt="License">
 </p>
 
 
