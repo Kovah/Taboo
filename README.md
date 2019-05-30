@@ -1,4 +1,4 @@
-<p align="center"><img src="public/social_twitter.png" alt="KVH Taboo"></p>
+<p align="center"><img src="public/social_large.png" alt="KVH Taboo"></p>
 
 <p align="center"><b>A Taboo-based game for your browser</b></p>
 
