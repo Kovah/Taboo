@@ -3,12 +3,24 @@
 }
 
 // Generate color backgrounds
-@each $color, $value in $colors {
-  .bg-#{$color} {
-    background-color: $value;
+@each $colorname, $color in $colors {
+  .bg-#{$colorname} {
+    background-color: $color;
 
-    input:focus + & {
-      background-color: darken($value, $focus-modifier);
+    input:focus + &,
+    input:checked + &{
+      background-color: darken($color, $focus-modifier);
+    }
+  }
+
+  .bg-gradient-#{$colorname} {
+    $color-dark: darken($color, $focus-modifier);
+    @include bg-gradient($color);
+
+    input:focus + &,
+    input:checked + &{
+
+      @include bg-gradient($color-dark);
     }
   }
 }

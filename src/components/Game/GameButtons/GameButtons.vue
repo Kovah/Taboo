@@ -1,12 +1,12 @@
 <template>
   <div class="game-buttons">
 
-    <button type="button" class="btn btn--fail game-button" id="game-fail"
+    <button type="button" class="btn btn--lg btn--fail game-button" id="game-fail"
       v-on:click="markFail" v-bind:disabled="!gameStarted">
       <img src="@/assets/cross.svg" alt="&cross;">
     </button>
 
-    <button type="button" class="btn btn--success game-button" id="game-success"
+    <button type="button" class="btn btn--lg btn--success game-button" id="game-success"
       v-on:click="markSuccess" v-bind:disabled="!gameStarted">
       <img src="@/assets/check.svg" alt="&check;">
     </button>

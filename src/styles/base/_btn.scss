@@ -2,21 +2,21 @@
   display: inline-block;
   width: auto;
   height: auto;
-  background-color: $btn-default-bg;
   border: 0;
   cursor: pointer;
   color: $btn-default-color;
   padding: $btn-padding;
   font-size: $font-size-base;
+  @include bg-gradient($btn-default-bg);
 
   // States
   &:hover,
   &:focus {
-    background-color: darken($btn-default-bg, $focus-modifier);
+    @include bg-gradient(darken($btn-default-bg, $focus-modifier));
   }
 
   &:active {
-    background-color: darken($btn-default-bg, $active-modifier);
+    @include bg-gradient(darken($btn-default-bg, $active-modifier));
   }
 
   &:disabled {
@@ -32,28 +32,28 @@
 
   // Color variants
   &--success {
-    background-color: $green;
+    @include bg-gradient($green);
 
     &:hover,
     &:focus {
-      background-color: darken($green, $focus-modifier);
+      @include bg-gradient(darken($green, $focus-modifier));
     }
 
     &:active {
-      background-color: darken($green, $active-modifier);
+      @include bg-gradient(darken($green, $active-modifier));
     }
   }
 
   &--fail {
-    background-color: $red;
+    @include bg-gradient($red);
 
     &:hover,
     &:focus {
-      background-color: darken($red, $focus-modifier);
+      @include bg-gradient(darken($red, $focus-modifier));
     }
 
     &:active {
-      background-color: darken($red, $active-modifier);
+      @include bg-gradient(darken($red, $active-modifier));
     }
   }
 

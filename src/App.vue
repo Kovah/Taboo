@@ -27,5 +27,6 @@
 </script>
 
 <style type="text/css" lang="scss">
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,700&display=swap');
   @import "@/styles/app.scss";
 </style>

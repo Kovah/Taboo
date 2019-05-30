@@ -2,7 +2,7 @@
   flex: 1 0 100%;
   display: flex;
   flex-wrap: wrap;
-  height: 60%;
+  height: 65%;
   word-break: break-word;
   hyphens: auto;
 
@@ -53,17 +53,23 @@
   }
 
   &__buzzwords {
+    position: relative;
     flex: 1 1 100%;
     display: flex;
     text-align: center;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     padding: $spacer-2;
-    background-color: rgba($red, .1);
+    background-color: $gray-100;
+
 
     @media screen and (min-width: $screen-sm) {
       padding: $spacer;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      font-size: $font-size-xl;
     }
   }
 
@@ -71,10 +77,12 @@
     flex: 1 1 100%;
     padding: $spacer-1 $spacer;
     color: darken($red, 20%);
-    font-size: $font-size-base;
+    font-family: $font-family-condensed;
+    font-size: $font-size-lg;
 
     @media screen and (min-width: $screen-lg) {
-      font-size: $font-size-lg;
+      flex: 0 1 50%;
+      font-size: $font-size-xl;
     }
 
     &:first-child {
