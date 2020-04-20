@@ -1,16 +1,14 @@
 <template>
   <div class="how-to">
-    <h3>So wird gespielt</h3>
+    <h3>{{ $t("message.howto") }}</h3>
     <ol>
-      <li>Gib deinen Namen ein und wähle eine Kategorie.</li>
-      <li>Starte das Spiel.</li>
-      <li>Du hast {{ roundLength }} Sekunden, um deinen Freunden das angezeigte Wort zu erklären. Du darfst zur Erklärung nicht die
-        Wörter aus dem roten Bereich nutzen!
+      <li>{{ $t("message.howto1") }}</li>
+      <li>{{ $t("message.howto2") }}</li>
+      <li>{{ $t("message.howto3", {roundLength : roundLength}) }}
       </li>
-      <li>Klicke auf den grünen Button, wenn deine Freunde das Wort erraten haben. Klicke Rot, wenn du das Wort
-        überspringen möchtest.
+      <li>{{ $t("message.howto4") }}
       </li>
-      <li>Alle Ergebnisse werden in deinem Browser gespeichert.</li>
+      <li>{{ $t("message.howto5") }}</li>
     </ol>
   </div>
 </template>

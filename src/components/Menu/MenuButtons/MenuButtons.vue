@@ -1,10 +1,10 @@
 <template>
   <div class="menu-buttons">
     <button type="button" class="btn btn--lg" id="start-game" v-bind:disabled="startDisabled" v-on:click="startGame">
-      Spiel Starten
+      {{ $t("message.start") }}
     </button>
     <button type="button" class="btn btn--lg" id="show-highscores" v-on:click="showHighscores">
-      Highscores anzeigen
+      {{ $t("message.showHighscores") }}
     </button>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div class="logo">
-    <h1 class="logo__headline">KVH Tabu</h1>
+    <h1 class="logo__headline">{{ $t("message.title") }}</h1>
     <p class="logo__subline">
-      Ein kleines, Tabu-ähnliches Spiel für den Browser
+      {{ $t("message.subline") }}
     </p>
   </div>
 </template>

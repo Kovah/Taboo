@@ -9,8 +9,8 @@ const store = new Vuex.Store({
   state: {
     // Defaults
     timerDefault: 60,
-    countdownDefault: 4,
     gameInitText: 'Mach dich bereit!',
+    gameInitText:'Ready!',
 
     // General game data
     playerName: '',

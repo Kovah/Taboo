@@ -4,14 +4,14 @@
     <div class="game-content__endpanel" v-if="displayEndpanel">
       <div class="game-content__endpanel-content">
         <div class="game-content__endpanel-header">
-          Spiel zuende!
+          {{ $t("message.game") }}
         </div>
         <br>
         <button type="button" class="btn" id="game-show-highscore" v-on:click="showHighscores">
-          Highscores anzeigen
+          {{ $t("message.highscore") }}
         </button>
         <button type="button" class="btn" id="game-back-to-menu" v-on:click="showMenu">
-          Zurück zum Menü
+          {{ $t("message.menu") }}
         </button>
       </div>
     </div>

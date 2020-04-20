@@ -1,7 +1,7 @@
 <template>
   <div class="player-form">
     <div class="form__group">
-      <label for="player-name" class="player-form__label">Gib deinen Namen ein:</label>
+      <label for="player-name" class="player-form__label">{{ $t("message.player") }}</label>
       <input type="text" class="form__input player-form__input" id="player-name" name="player-name"
         maxlength="30" @keyup="processInput">
     </div>

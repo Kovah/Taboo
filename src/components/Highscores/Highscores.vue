@@ -5,7 +5,7 @@
 
       <h1>Highscores</h1>
 
-      <p v-if="!hasHighscores">Keine Highscores vorhanden.</p>
+      <p v-if="!hasHighscores">{{ $t("message.hasHighscores") }}</p>
 
       <div class="table-wrapper highscores-table__wrapper">
         <table class="highscores-table" v-if="hasHighscores">

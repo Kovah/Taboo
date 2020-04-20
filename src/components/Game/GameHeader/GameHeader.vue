@@ -15,7 +15,7 @@
 
     <button type="button" class="btn game-header__stop-btn" id="game-stop"
       v-bind:disabled="!gameStarted" v-on:click="stopGame">
-      <img src="@/assets/cross.svg" alt="X"> <span>Beenden</span>
+      <img src="@/assets/cross.svg" alt="X"> <span>{{ $t("message.stop") }}</span>
     </button>
   </div>
 </template>
