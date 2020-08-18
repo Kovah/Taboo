@@ -1,8 +1,12 @@
 #menu {
-  height: calc(100vh - #{$spacer * 2});
+  height: calc(100vh - #{$spacer * 6});
   overflow: auto;
   padding: $spacer;
   background: $white;
+
+  @media screen and (min-width: $screen-md) {
+    height: calc(100vh - #{$spacer * 2});
+  }
 }
 
 .menu__wrapper {
