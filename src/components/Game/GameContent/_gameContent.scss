@@ -44,7 +44,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-size: $font-size-h2;
+    font-size: $font-size-h1;
     font-weight: $font-weight-headings;
 
     @media screen and (min-width: $screen-lg) {
@@ -78,7 +78,9 @@
     padding: $spacer-1 $spacer;
     color: darken($red, 20%);
     font-family: $font-family-condensed;
-    font-size: $font-size-lg;
+    font-size: $font-size-xl;
+    font-weight: bold;
+    max-width: 50%;
 
     @media screen and (min-width: $screen-lg) {
       flex: 0 1 50%;
