@@ -40,6 +40,12 @@ const store = new Vuex.Store({
     playerNotReady (state) {
       state.playerName = "Spieler 1"
     },
+    turnDuration (state, turnDuration) {
+      state.timerDefault = turnDuration;
+    },
+    turnNotSet (state) {
+      state.timerDefault = 60;
+    },
     selectCategory (state, newCategory) {
       state.selectedCategory = newCategory;
 
