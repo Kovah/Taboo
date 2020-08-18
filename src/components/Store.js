@@ -13,14 +13,9 @@ const store = new Vuex.Store({
     gameInitText: 'Mach dich bereit!',
 
     // General game data
-    playerName: '',
+    playerName: 'Spieler 1',
     selectedCategory: 'animals',
     availableCards: {},
-
-    // Menu states
-    playerReady: false,
-    categoryReady: true,
-    gameReady: false,
 
     // App states
     showGamePanel: false,
@@ -41,16 +36,9 @@ const store = new Vuex.Store({
     // Menu mutations
     playerReady (state, playername) {
       state.playerName = playername;
-      state.gameReady = state.categoryReady;
     },
     playerNotReady (state) {
-      state.gameReady = state.playerReady = false;
-    },
-    categoryReady (state) {
-      state.gameReady = state.playerReady;
-    },
-    categoryNotReady (state) {
-      state.gameReady = state.categoryReady = false;
+      state.playerName = "Spieler 1"
     },
     selectCategory (state, newCategory) {
       state.selectedCategory = newCategory;
