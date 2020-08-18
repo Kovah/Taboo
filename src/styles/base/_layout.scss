@@ -6,38 +6,96 @@ body {
 }
 
 body {
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
   background: linear-gradient(-50deg, $teal, $blue);
-}
-
-#app {
-  position: relative;
-  height: 100%;
 }
 
 .panel {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: $panel-margin-mobile + $panel-top-size;
   bottom: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 100;
-  padding: $spacer;
+  width: calc(100% - #{$panel-margin-mobile * 2});
+  margin: 0 $panel-margin-mobile;
+  padding: 0 $spacer $spacer;
   background: $white;
-  transition: left $panel-anim-speed $panel-anim-timing;
+  box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.07),
+  0 -4px 4px rgba(0, 0, 0, 0.07),
+  0 -8px 8px rgba(0, 0, 0, 0.07),
+  0 -16px 16px rgba(0, 0, 0, 0.07),
+  0 -32px 32px rgba(0, 0, 0, 0.07),
+  0 -64px 64px rgba(0, 0, 0, 0.07);
+
+  @media screen and (min-width: $screen-md) {
+    top: $panel-margin + $panel-top-size;
+    width: calc(100% - #{$panel-margin * 2});
+    margin: 0 $panel-margin;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    max-width: $screen-lg;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -#{$panel-top-size};
+    left: 0;
+    right: 0;
+    height: $panel-top-size;
+    background: $white;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
 }
 
-.panel-active-enter-active, .panel-active-leave-active {
-  transition: left $panel-anim-speed $panel-anim-timing;
-}
-.panel-active-enter, .panel-active-leave-to {
-  left: 100vw;
-  transition: left $panel-anim-speed $panel-anim-timing reverse;
+.panel-content {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.container {
-  max-width: $screen-lg;
-  margin: 0 auto;
+.panel-enter-active {
+  animation: panelAnimMobile $panel-anim-speed forwards;
+
+  @media screen and (min-width: $screen-md) {
+    animation: panelAnim $panel-anim-speed forwards;
+  }
+}
+
+.panel-leave-active {
+  animation: panelAnimMobile $panel-anim-speed forwards reverse;
+
+  @media screen and (min-width: $screen-md) {
+    animation: panelAnim $panel-anim-speed forwards reverse;
+  }
+}
+
+@keyframes panelAnimMobile {
+  0% {
+    top: 10rem;
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    top: $panel-margin-mobile + $panel-top-size;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes panelAnim {
+  0% {
+    top: 10rem;
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    top: $panel-margin + $panel-top-size;
+    opacity: 1;
+    transform: scale(1);
+  }
 }

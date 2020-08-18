@@ -18,6 +18,7 @@ const store = new Vuex.Store({
     availableCards: {},
 
     // App states
+    showMenuPanel: true,
     showGamePanel: false,
     showHighscorePanel: false,
     gameCountdown: false,
@@ -54,6 +55,7 @@ const store = new Vuex.Store({
 
     // Start the game countdown
     startCountdown (state) {
+      state.showMenuPanel = false;
       state.showGamePanel = true;
       state.gameCountdown = true;
       state.keyword = state.gameInitText;
@@ -118,6 +120,8 @@ const store = new Vuex.Store({
     // Global actions
     showMenu (state) {
       state.gameStarted = false;
+
+      state.showMenuPanel = true;
       state.showGamePanel = false;
       state.showHighscorePanel = false;
 
@@ -170,6 +174,8 @@ const store = new Vuex.Store({
     },
     showHighscores (state, afterGamePanel) {
       state.gameStarted = false;
+
+      state.showMenuPanel = false;
       state.showGamePanel = false;
 
       if (afterGamePanel) {

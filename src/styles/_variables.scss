@@ -89,13 +89,18 @@ $font-size-h1: $font-size-xl * 2;
 $font-size-h2: $font-size-xl;
 $font-size-h3: $font-size-lg;
 
+$font-size-keyword-mobile: $font-size-xl;
+$font-size-keyword: $font-size-xl * 1.5;
+
 // Margins
 $headings-margin-bottom: 0;
 $paragraph-margin-bottom: $spacer-2;
 
 // Panels
-$panel-anim-speed: .3s;
-$panel-anim-timing: cubic-bezier(0.395, 0.610, 0.505, 1.330);
+$panel-anim-speed: 400ms;
+$panel-top-size: 2rem;
+$panel-margin: 4rem;
+$panel-margin-mobile: 2rem;
 
 // Forms
 $form-group-margin: $spacer-2;

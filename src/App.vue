@@ -1,9 +1,11 @@
 <template>
 
   <div id="app">
-    <Menu/>
-    <Game/>
-    <Highscores/>
+    <transition name="panel" mode="out-in" duration="400ms">
+      <Menu v-if="$store.state.showMenuPanel"/>
+      <Game v-if="$store.state.showGamePanel"/>
+      <Highscores v-if="$store.state.showHighscorePanel"/>
+    </transition>
   </div>
 
 </template>
