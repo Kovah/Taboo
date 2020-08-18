@@ -7,8 +7,8 @@
     </div>
     <div class="form__group">
       <label for="turn-duration" class="player-form__label">Dauer der Runde:</label>
-      <input type="text" class="form__input player-form__input" id="turn-duration" name="turn-duration"
-        maxlength="5" value="60" @keyup="processTurnDuration">
+      <input type="number" class="form__input player-form__input" id="turn-duration" name="turn-duration"
+        min="10" max="600" v-bind:value="this.$store.state.timerDefault" @keyup="processTurnDuration">
     </div>
   </div>
 </template>
