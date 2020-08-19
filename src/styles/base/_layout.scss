@@ -7,7 +7,10 @@ body {
 
 body {
   overflow: hidden;
-  background: linear-gradient(-50deg, $teal, $blue);
+  //background: linear-gradient(-60deg, #013cc5, #8e58fe, #14e1da, #0b62f5);
+  background: linear-gradient(-60deg, $blue, lighten($indigo, 10%), lighten($teal, 10%), $cyan);
+  background-size: 300% 300%;
+  animation: gradientBG 30s ease infinite;
 }
 
 .panel {
@@ -71,6 +74,18 @@ body {
 
   @media screen and (min-width: $screen-md) {
     animation: panelAnim $panel-anim-speed forwards reverse;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
   }
 }
 
