@@ -7,6 +7,7 @@
   color: $btn-default-color;
   padding: $btn-padding;
   font-size: $font-size-base;
+  border-radius: $border-radius;
   @include bg-gradient($btn-default-bg);
 
   // States
@@ -36,11 +37,11 @@
 
     &:hover,
     &:focus {
-      @include bg-gradient(darken($green, $focus-modifier));
+      @include bg-gradient(darken($green, 5%));
     }
 
     &:active {
-      @include bg-gradient(darken($green, $active-modifier));
+      @include bg-gradient(darken($green, 10%));
     }
   }
 
@@ -49,18 +50,18 @@
 
     &:hover,
     &:focus {
-      @include bg-gradient(darken($red, $focus-modifier));
+      @include bg-gradient(darken($red, 5%));
     }
 
     &:active {
-      @include bg-gradient(darken($red, $active-modifier));
+      @include bg-gradient(darken($red, 10%));
     }
   }
 
   // Buttons with icons in it
   svg, img {
     display: inline-block;
-    max-width: 100%;
-    max-height: 80%;
+    max-width: 1rem;
+    max-height: 1rem;
   }
 }

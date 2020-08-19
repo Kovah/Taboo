@@ -2,7 +2,7 @@
 
     <div id="highscores" class="panel">
       <div class="panel-content">
-        <h1>Highscores</h1>
+        <h2>Highscores</h2>
 
         <p v-if="!hasHighscores">Keine Highscores vorhanden.</p>
 

@@ -3,9 +3,11 @@
     <div id="game" class="panel">
       <div class="panel-content">
 
-        <GameHeader/>
-        <GameContent/>
-        <GameButtons/>
+        <div class="game-panel">
+          <GameHeader/>
+          <GameContent/>
+          <GameButtons/>
+        </div>
 
       </div>
     </div>

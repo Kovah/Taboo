@@ -11,13 +11,12 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
 
-$blue: #1e88e5;
+$blue: #0E77F7;
 $indigo: #5e35b1;
 $purple: #8e24aa;
 $pink: #d81b60;
 $red: #e53935;
 $orange: #fb8c00;
-$yellow: #fdd835;
 $green: #43a047;
 $teal: #00acc1;
 $cyan: #039be5;
@@ -29,13 +28,12 @@ $colors: (
   "pink": $pink,
   "red": $red,
   "orange": $orange,
-  "yellow": $yellow,
   "green": $green,
   "teal": $teal,
   "cyan": $cyan,
 );
 
-$primary: $blue;
+$primary: $cyan;
 
 $body-color: $gray-800;
 $body-bg: $gray-100;
@@ -45,10 +43,10 @@ $link-decoration: none;
 $link-hover-color: $primary;
 $link-hover-decoration: underline;
 
-$gradient-modifier: 10%;
-$gradient-angle: 150deg;
+$gradient-modifier: 30deg;
+$gradient-angle: 140deg;
 
-$focus-modifier: 5%;
+$focus-modifier: 30deg;
 $active-modifier: 10%;
 
 // Screen sizes
@@ -92,6 +90,8 @@ $font-size-h3: $font-size-lg;
 $font-size-keyword-mobile: $font-size-xl;
 $font-size-keyword: $font-size-xl * 1.5;
 
+$border-radius: .5rem;
+
 // Margins
 $headings-margin-bottom: 0;
 $paragraph-margin-bottom: $spacer-2;
@@ -107,14 +107,12 @@ $form-group-margin: $spacer-2;
 
 $input-bg: $body-bg;
 $input-border-width: 1px;
-$input-border-color: $gray-600;
+$input-border-color: $gray-500;
 $input-padding-x: $spacer-3;
 $input-padding-y: $spacer-2;
 $input-padding: $input-padding-y $input-padding-x;
 
 $input-active-border-color: $gray-900;
-$input-active-outline-width: 3px;
-$input-active-outline-color: $gray-300;
 
 // Buttons
 $btn-default-bg: $gray-900;

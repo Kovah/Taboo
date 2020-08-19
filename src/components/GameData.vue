@@ -5,16 +5,14 @@
     name: 'GameData',
     categories: TabooData.categories(),
     colors: [
-      {id: 'blue', value: '#1e88e5'},
-      {id: 'indigo', value: '#5e35b1'},
-      {id: 'purple', value: '#8e24aa'},
-      {id: 'pink', value: '#d81b60'},
-      {id: 'red', value: '#e53935'},
-      {id: 'orange', value: '#fb8c00'},
-      {id: 'yellow', value: '#fdd835'},
-      {id: 'green', value: '#43a047'},
-      {id: 'teal', value: '#00acc1'},
-      {id: 'cyan', value: '#039be5'}
+      {id: 'blue'},
+      {id: 'indigo'},
+      {id: 'pink'},
+      {id: 'red'},
+      {id: 'orange'},
+      {id: 'green'},
+      {id: 'teal'},
+      {id: 'cyan'},
     ],
     getCategories () {
       return this.categories.de;

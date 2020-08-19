@@ -17,9 +17,14 @@
     },
     data () {
       return {
-        categories: GameData.getCategories(),
-        colors: GameData.getColors()
+        categories: GameData.getCategories()
       };
+    },
+    computed: {
+      colors () {
+        const colors = GameData.getColors()
+        return colors.concat(colors)
+      }
     }
   };
 </script>

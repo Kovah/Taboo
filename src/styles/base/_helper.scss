@@ -1,25 +1,21 @@
-.hidden {
-  display: none;
-}
-
 // Generate color backgrounds
 @each $colorname, $color in $colors {
   .bg-#{$colorname} {
     background-color: $color;
 
     input:focus + &,
-    input:checked + &{
-      background-color: darken($color, $focus-modifier);
+    input:checked + & {
+      background-color: adjust_hue($color, $focus-modifier);
     }
   }
 
   .bg-gradient-#{$colorname} {
-    $color-dark: darken($color, $focus-modifier);
     @include bg-gradient($color);
 
     input:focus + &,
-    input:checked + &{
+    input:checked + & {
 
+      $color-dark: adjust_hue($color, $focus-modifier / 2);
       @include bg-gradient($color-dark);
     }
   }

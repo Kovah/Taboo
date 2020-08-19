@@ -1,22 +1,28 @@
 <template>
   <div class="game-header">
 
-    <div class="game-header__timer">
-      <div v-bind:class="'game-header__timer-left ' + timerClass">{{ computedGameTimer }}</div>
-      <div v-bind:class="'game-header__timer-progress ' + progressClass"
-        v-bind:style="{width: gameProgress + '%'}"></div>
+    <div class="game-header__inner">
+      <div class="game-header__timer">
+        Time: <span v-bind:class="'game-header__timer-left ' + timerClass">{{ computedGameTimer }}</span>
+      </div>
+
+      <div class="game-header__score">
+        <span class="game-header__score--fail">{{ scoreFail }}</span>
+        <span>&nbsp;:&nbsp;</span>
+        <span class="game-header__score--success">{{ scoreSuccess }}</span>
+      </div>
+
+      <div class="game-header__stop">
+        <button type="button" class="btn game-header__stop-btn" id="game-stop"
+          v-bind:disabled="!gameStarted" v-on:click="stopGame">
+          Beenden
+        </button>
+      </div>
     </div>
 
-    <div class="game-header__score">
-      <span class="game-header__score--fail">{{ scoreFail }}</span>
-      <span>&nbsp;:&nbsp;</span>
-      <span class="game-header__score--success">{{ scoreSuccess }}</span>
+    <div class="game-header__progress-wrapper">
+      <div v-bind:class="'game-header__progress ' + progressClass" v-bind:style="{width: gameProgress + '%'}"></div>
     </div>
-
-    <button type="button" class="btn game-header__stop-btn" id="game-stop"
-      v-bind:disabled="!gameStarted" v-on:click="stopGame">
-      <img src="@/assets/cross.svg" alt="X"> <span>Beenden</span>
-    </button>
   </div>
 </template>
 
@@ -48,20 +54,17 @@
       }, 1000);
     },
     computed: {
-      timerDuration () {
-        return this.$store.state.timerDefault;
-      },
       timerClass () {
         return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__timer-left--crit' : '';
       },
       computedGameTimer () {
-        return this.gameTimer > 0 ? this.gameTimer : '';
+        return this.gameTimer > 0 ? this.gameTimer : 0;
       },
       gameProgress () {
         return this.gameTimer / this.$store.state.timerDefault * 100;
       },
       progressClass () {
-        return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__timer-progress--crit' : '';
+        return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__progress--crit' : '';
       },
       scoreSuccess () {
         return this.$store.state.score.success;
