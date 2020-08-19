@@ -3,6 +3,7 @@
     <div id="menu" class="panel">
       <div class="panel-content">
 
+        <LangSwitch/>
         <Logo/>
         <HowTo/>
         <PlayerForm/>
@@ -22,10 +23,12 @@
   import CategorySelect from './CategorySelect/CategorySelect';
   import MenuButtons from './MenuButtons/MenuButtons';
   import MenuFooter from './MenuFooter/MenuFooter';
+  import LangSwitch from './LangSwitch/LangSwitch';
 
   export default {
     name: 'Menu',
     components: {
+      LangSwitch,
       Logo,
       HowTo,
       PlayerForm,

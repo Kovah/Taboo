@@ -1,0 +1,38 @@
+{
+  "title": "KVH Taboo",
+  "subline": "A Taboo game for your browser",
+  "menu": "Back to Menu",
+  "howto": {
+    "title": "How to play",
+    "instruction": [
+      "Enter your name and select a category.",
+      "Start the game.",
+      "You have {roundLength} seconds to explain your friends the shown word. You are not allowed to use the red buzzwords below it!",
+      "Click the green button if your friends gt the word. Click the red button if you want to skip the current word.",
+      "All results will be saved in your browser."
+    ]
+  },
+  "meta": {
+    "footerNotice": "A game by"
+  },
+  "game": {
+    "player": "Player",
+    "playerName": "Enter your player name:",
+    "playerDefault": "Player 1",
+    "category": "Category",
+    "start": "Start game",
+    "stop": "Abort",
+    "over": "Game Over!",
+    "init": "Get Ready!",
+    "roundDuration": "Round duration in seconds:",
+    "time": "Time"
+  },
+  "highscores": {
+    "title": "Highscores",
+    "show": "Show highscores",
+    "empty": "No highscores available",
+    "delete": "Delete all highscores",
+    "rank": "Rank",
+    "date": "Date"
+  }
+}

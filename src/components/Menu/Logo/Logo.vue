@@ -1,9 +1,7 @@
 <template>
   <div class="logo">
-    <h1 class="logo__headline">KVH Tabu</h1>
-    <p class="logo__subline">
-      Ein kleines, Tabu-ähnliches Spiel für den Browser
-    </p>
+    <h1 class="logo__headline">{{ $t('title') }}</h1>
+    <p class="logo__subline">{{ $t('subline') }}</p>
   </div>
 </template>
 

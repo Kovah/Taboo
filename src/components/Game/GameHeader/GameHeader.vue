@@ -3,7 +3,7 @@
 
     <div class="game-header__inner">
       <div class="game-header__timer">
-        Time: <span v-bind:class="'game-header__timer-left ' + timerClass">{{ computedGameTimer }}</span>
+        {{ $t('game.time')}}: <span v-bind:class="'game-header__timer-left ' + timerClass">{{ computedGameTimer }}</span>
       </div>
 
       <div class="game-header__score">
@@ -15,7 +15,7 @@
       <div class="game-header__stop">
         <button type="button" class="btn game-header__stop-btn" id="game-stop"
           v-bind:disabled="!gameStarted" v-on:click="stopGame">
-          Beenden
+          {{ $t('game.stop')}}
         </button>
       </div>
     </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="menu-buttons">
     <button type="button" class="btn btn--lg" id="start-game" v-on:click="startGame">
-      Spiel Starten
+      {{ $t('game.start') }}
     </button>
     <button type="button" class="btn btn--lg" id="show-highscores" v-on:click="showHighscores">
-      Highscores anzeigen
+      {{ $t('highscores.show') }}
     </button>
   </div>
 </template>
@@ -14,7 +14,7 @@
     name: 'MenuButtons',
     methods: {
       startGame () {
-        this.$store.commit('startCountdown');
+        this.$store.commit('startCountdown', this.$i18n);
       },
       showHighscores () {
         this.$store.commit('showHighscores');

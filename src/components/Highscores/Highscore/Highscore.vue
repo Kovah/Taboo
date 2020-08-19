@@ -17,8 +17,9 @@
     props: ['highscore', 'highscoreIndex'],
     computed: {
       highscoreDate () {
-        let date = new Date(this.highscore.date);
-        return date.toLocaleString('de-DE');
+        const date = new Date(this.highscore.date);
+        const locale = (this.$i18n.locale === 'de' ? 'de-DE' : 'en-US');
+        return date.toLocaleString(locale);
       }
     },
     methods: {

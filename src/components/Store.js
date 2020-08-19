@@ -10,10 +10,9 @@ const store = new Vuex.Store({
     // Defaults
     timerDefault: 60,
     countdownDefault: 4,
-    gameInitText: 'Mach dich bereit!',
 
     // General game data
-    playerName: 'Spieler 1',
+    playerName: 'Player 1',
     selectedCategory: 'animals',
     availableCards: {},
 
@@ -35,11 +34,8 @@ const store = new Vuex.Store({
   },
   mutations: {
     // Menu mutations
-    playerReady (state, playername) {
+    setPlayerName (state, playername) {
       state.playerName = playername;
-    },
-    playerNotReady (state) {
-      state.playerName = "Spieler 1"
     },
     turnDuration (state, turnDuration) {
       state.timerDefault = turnDuration;
@@ -54,11 +50,11 @@ const store = new Vuex.Store({
     },
 
     // Start the game countdown
-    startCountdown (state) {
+    startCountdown (state, i18n) {
       state.showMenuPanel = false;
       state.showGamePanel = true;
       state.gameCountdown = true;
-      state.keyword = state.gameInitText;
+      state.keyword = i18n.t('game.init');
       state.availableCards = GameData.getCardsForCategory(state.selectedCategory);
 
       console.log('Game started by player ' + state.playerName + ' with category ' + state.selectedCategory);
