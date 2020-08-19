@@ -8,4 +8,7 @@ module.exports = {
         template: path.resolve('index.html'),
       })]);
   },
+  devServer: {
+    disableHostCheck: true
+  }
 };
