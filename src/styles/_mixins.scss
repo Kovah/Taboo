@@ -1,4 +1,0 @@
-@mixin bg-gradient($color){
-  $gradient-color: adjust_hue($color, $gradient-modifier);
-  background: linear-gradient($gradient-angle, $color, $gradient-color);
-}

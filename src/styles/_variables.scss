@@ -17,7 +17,7 @@ $purple: #8e24aa;
 $pink: #d81b60;
 $red: #e53935;
 $orange: #fb8c00;
-$green: #43a047;
+$green: #64AD41;
 $teal: #00acc1;
 $cyan: #039be5;
 
@@ -46,8 +46,10 @@ $link-hover-decoration: underline;
 $gradient-modifier: 30deg;
 $gradient-angle: 140deg;
 
-$focus-modifier: 30deg;
-$active-modifier: 10%;
+$focus-modifier: 10%;
+$focus-modifier-deg: 20deg;
+$active-modifier: 20%;
+$active-modifier-deg: 40deg;
 
 // Screen sizes
 $screen-xs: 0;
@@ -115,7 +117,7 @@ $input-padding: $input-padding-y $input-padding-x;
 $input-active-border-color: $gray-900;
 
 // Buttons
-$btn-default-bg: $gray-900;
+$btn-default-bg: $primary;
 $btn-default-color: $white;
 $btn-padding-x: $spacer-3;
 $btn-padding-y: $spacer-2;

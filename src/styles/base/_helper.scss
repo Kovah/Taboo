@@ -5,18 +5,19 @@
 
     input:focus + &,
     input:checked + & {
-      background-color: adjust_hue($color, $focus-modifier);
+      background-color: adjust_hue($color, $focus-modifier-deg);
     }
   }
 
   .bg-gradient-#{$colorname} {
-    @include bg-gradient($color);
+    $gradient-color: adjust_hue($color, $focus-modifier-deg);
+    background: linear-gradient($gradient-angle, $color, $gradient-color);
 
     input:focus + &,
     input:checked + & {
 
-      $color-dark: adjust_hue($color, $focus-modifier / 2);
-      @include bg-gradient($color-dark);
+      $color-dark: adjust_hue($color, $active-modifier-deg);
+      background: linear-gradient($gradient-angle, $color, $color-dark);
     }
   }
 }
