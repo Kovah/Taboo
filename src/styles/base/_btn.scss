@@ -9,6 +9,7 @@
   font-size: $font-size-base;
   border-radius: $border-radius;
   @include bg-gradient($btn-default-bg);
+  transition: background 150ms ease, transform 150ms ease;
 
   // States
   &:hover,
@@ -16,8 +17,10 @@
     @include bg-gradient(darken($btn-default-bg, $focus-modifier));
   }
 
-  &:active {
+  &:active,
+  &.active {
     @include bg-gradient(darken($btn-default-bg, $active-modifier));
+    transform: scale(.975);
   }
 
   &:disabled {
@@ -40,7 +43,8 @@
       @include bg-gradient(darken($green, 5%));
     }
 
-    &:active {
+    &:active,
+    &.active {
       @include bg-gradient(darken($green, 10%));
     }
   }
@@ -53,7 +57,8 @@
       @include bg-gradient(darken($red, 5%));
     }
 
-    &:active {
+    &:active,
+    &.active {
       @include bg-gradient(darken($red, 10%));
     }
   }

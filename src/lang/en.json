@@ -8,7 +8,7 @@
       "Enter your name and select a category.",
       "Start the game.",
       "You have {roundLength} seconds to explain your friends the shown word. You are not allowed to use the red buzzwords below it!",
-      "Click the green button if your friends gt the word. Click the red button if you want to skip the current word.",
+      "Click the green button if your friends gt the word. Click the red button if you want to skip the current word. You may also use the right arrow key for the green button, or the left arrow key for the red button.",
       "All results will be saved in your browser."
     ]
   },
