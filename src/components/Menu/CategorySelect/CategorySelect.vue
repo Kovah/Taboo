@@ -15,12 +15,10 @@
       GameData,
       Category
     },
-    data () {
-      return {
-        categories: GameData.getCategories()
-      };
-    },
     computed: {
+      categories () {
+        return GameData.getCategories(this.$store.state.locale);
+      },
       colors () {
         const colors = GameData.getColors()
         return colors.concat(colors)

@@ -10,6 +10,7 @@ const store = new Vuex.Store({
     // Defaults
     timerDefault: 60,
     countdownDefault: 4,
+    locale: 'en',
 
     // General game data
     playerName: 'Player 1',
@@ -48,14 +49,18 @@ const store = new Vuex.Store({
 
       console.log('Category changed to ' + newCategory);
     },
+    switchLocale(state, payload) {
+      payload.vm.$i18n.locale = payload.locale;
+      state.locale = payload.locale;
+    },
 
     // Start the game countdown
-    startCountdown (state, i18n) {
+    async startCountdown (state, i18n) {
       state.showMenuPanel = false;
       state.showGamePanel = true;
       state.gameCountdown = true;
       state.keyword = i18n.t('game.init');
-      state.availableCards = GameData.getCardsForCategory(state.selectedCategory);
+      state.availableCards = await GameData.getCardsForCategory(state.selectedCategory, i18n.locale);
 
       console.log('Game started by player ' + state.playerName + ' with category ' + state.selectedCategory);
     },

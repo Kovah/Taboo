@@ -14,11 +14,11 @@
       {id: 'teal'},
       {id: 'cyan'},
     ],
-    getCategories () {
-      return this.categories.de;
+    getCategories (locale) {
+      return this.categories[locale];
     },
-    getCardsForCategory (category) {
-      return TabooData.getCategory(category);
+    async getCardsForCategory (category, locale) {
+      return await TabooData.getCategory(category, locale);
     },
     getColors () {
       return this.colors;

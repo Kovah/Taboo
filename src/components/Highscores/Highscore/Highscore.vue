@@ -24,7 +24,7 @@
     },
     methods: {
       categoryName (category) {
-        return GameData.getCategories()[category].text;
+        return GameData.getCategories(this.$i18n.locale)[category].text;
       }
     }
   };
