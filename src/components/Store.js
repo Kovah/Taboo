@@ -10,7 +10,7 @@ const store = createStore({
     locale: 'en',
 
     // General game data
-    playerName: 'Player 1',
+    playerName: '',
     selectedCategory: 'animals',
     availableCards: {},
 
