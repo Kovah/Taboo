@@ -1,8 +1,9 @@
 .logo {
   text-align: center;
-  padding: $spacer-2 0 $spacer-4;
+  padding: $spacer-2 0;
 
   &__subline {
     font-size: $font-size-lg;
+    margin: 0;
   }
 }

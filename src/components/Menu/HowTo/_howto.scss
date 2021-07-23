@@ -1,7 +1,13 @@
 .how-to {
+  grid-area: howto;
+
+  h3 {
+    margin-bottom: $spacer-2;
+  }
 
   ol {
-    margin-top: $spacer;
+    margin: 0;
+    padding-left: $spacer;
     font-size: $font-size-sm;
   }
 }

@@ -1,11 +1,22 @@
-#menu {
+.menu__form {
+  display: grid;
+  grid-template-areas:
+      "howto"
+      "form";
+  grid-gap: $spacer-4;
+  margin: $spacer-4 0;
 
+  @media screen and (min-width: $screen-sm) {
+    grid-gap: $spacer-5;
+    grid-template-areas:
+      "form howto howto";
+    margin: $spacer-5 0;
+  }
 }
 
 @import "LangSwitch/langswitch";
 @import "Logo/logo";
 @import "HowTo/howto";
-@import "PlayerForm/playerform";
 @import "CategorySelect/categoryselect";
 @import "MenuButtons/menubuttons";
 @import "MenuFooter/menuFooter";

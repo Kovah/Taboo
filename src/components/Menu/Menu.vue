@@ -4,8 +4,10 @@
 
     <LangSwitch/>
     <Logo/>
-    <HowTo/>
-    <PlayerForm/>
+    <div class="menu__form">
+      <PlayerForm/>
+      <HowTo/>
+    </div>
     <CategorySelect/>
     <MenuButtons/>
     <MenuFooter/>

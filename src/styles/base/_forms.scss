@@ -4,8 +4,11 @@
   label {
     display: block;
     margin-bottom: $spacer-2;
-    font-size: $font-size-lg;
     font-weight: $font-weight-bold;
+  }
+
+  @media screen and (min-width: $screen-sm) {
+    font-size: $font-size-lg;
   }
 }
 

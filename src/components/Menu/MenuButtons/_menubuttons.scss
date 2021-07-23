@@ -1,15 +1,19 @@
 .menu-buttons {
 
   padding: $spacer-5 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
-  .btn + .btn {
-    margin-top: $spacer;
+  .btn:first-of-type {
+    margin-bottom: $spacer;
   }
 
   @media screen and (min-width: $screen-sm) {
-    .btn + .btn {
-      margin-left: $spacer;
+    flex-direction: row;
+
+    .btn:first-of-type {
+      margin-bottom: 0;
     }
   }
 }
