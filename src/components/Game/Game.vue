@@ -1,15 +1,13 @@
 <template>
 
   <div id="game" class="panel">
-    <div class="panel-content">
 
-      <div class="game-panel">
-        <GameHeader/>
-        <GameContent/>
-        <GameButtons/>
-      </div>
-
+    <div class="game-panel">
+      <GameHeader/>
+      <GameContent/>
+      <GameButtons/>
     </div>
+
   </div>
 
 </template>

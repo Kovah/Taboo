@@ -6,75 +6,52 @@ body {
 }
 
 body {
-  overflow: hidden;
-  //background: linear-gradient(-60deg, #013cc5, #8e58fe, #14e1da, #0b62f5);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
   background: linear-gradient(-60deg, $blue, lighten($indigo, 10%), lighten($teal, 10%), $cyan);
   background-size: 300% 300%;
   animation: gradientBG 30s ease infinite;
+  padding: $panel-margin-mobile $spacer 0;
+
+  @media screen and (min-width: $screen-md) {
+    padding: $panel-margin $spacer-4 0;
+  }
+}
+
+#app {
+  flex-grow: 1;
 }
 
 .panel {
-  position: absolute;
-  top: $panel-margin-mobile + $panel-top-size;
-  bottom: 0;
-  width: calc(100% - #{$panel-margin-mobile * 2});
-  margin: 0 $panel-margin-mobile;
+  width: 100%;
+  height: 100%;
+  max-width: $screen-lg;
+  margin: 0 auto;
+  padding: $spacer;
   background: $white;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.07),
   0 -4px 4px rgba(0, 0, 0, 0.07),
   0 -8px 8px rgba(0, 0, 0, 0.07),
   0 -16px 16px rgba(0, 0, 0, 0.07),
   0 -32px 32px rgba(0, 0, 0, 0.07),
   0 -64px 64px rgba(0, 0, 0, 0.07);
-
-  @media screen and (min-width: $screen-md) {
-    top: $panel-margin + $panel-top-size;
-    width: calc(100% - #{$panel-margin * 2});
-    margin: 0 $panel-margin;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    max-width: $screen-lg;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: -#{$panel-top-size};
-    left: 0;
-    right: 0;
-    height: $panel-top-size;
-    background: $white;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-  }
-}
-
-.panel-content {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 0 $spacer $spacer;
 }
 
 .panel-enter-active {
-  animation: panelAnimMobile $panel-anim-speed forwards;
-
-  @media screen and (min-width: $screen-md) {
-    animation: panelAnim $panel-anim-speed forwards;
-  }
+  transition: all 400ms ease-out;
 }
 
 .panel-leave-active {
-  animation: panelAnimMobile $panel-anim-speed forwards reverse;
+  transition: all 400ms cubic-bezier(1, 0.5, 0.8, 1);
+}
 
-  @media screen and (min-width: $screen-md) {
-    animation: panelAnim $panel-anim-speed forwards reverse;
-  }
+.panel-enter-from,
+.panel-leave-to {
+  transform: translateY(40px);
+  opacity: 0;
 }
 
 @keyframes gradientBG {
@@ -86,31 +63,5 @@ body {
   }
   100% {
     background-position: 0 50%;
-  }
-}
-
-@keyframes panelAnimMobile {
-  0% {
-    top: 10rem;
-    opacity: 0;
-    transform: scale(1.05);
-  }
-  100% {
-    top: $panel-margin-mobile + $panel-top-size;
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes panelAnim {
-  0% {
-    top: 10rem;
-    opacity: 0;
-    transform: scale(1.05);
-  }
-  100% {
-    top: $panel-margin + $panel-top-size;
-    opacity: 1;
-    transform: scale(1);
   }
 }

@@ -50,16 +50,17 @@
 
   &__buzzwords {
     position: relative;
-    display: flex;
     text-align: center;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: $spacer;
     padding: $spacer-2;
     background-color: $gray-100;
     border-radius: $border-radius;
 
     @media screen and (min-width: $screen-sm) {
+      grid-template-columns: 1fr 1fr;
       padding: $spacer;
     }
 
@@ -69,25 +70,16 @@
   }
 
   &__buzzword {
-    flex: 1 1 100%;
-    padding: $spacer-1 $spacer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: darken($red, 20%);
     font-family: $font-family-condensed;
-    font-size: $font-size-xl;
+    font-size: $font-size-lg;
     font-weight: bold;
-    max-width: 50%;
 
     @media screen and (min-width: $screen-lg) {
-      flex: 0 1 50%;
       font-size: $font-size-xl;
-    }
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
     }
   }
 }

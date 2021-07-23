@@ -15,9 +15,7 @@ const store = createStore({
     availableCards: {},
 
     // App states
-    showMenuPanel: true,
-    showGamePanel: false,
-    showHighscorePanel: false,
+    activePanel: 'menu',
     gameCountdown: false,
     gameStarted: false,
 
@@ -54,8 +52,7 @@ const store = createStore({
 
     // Start the game countdown
     async startCountdown (state, i18n) {
-      state.showMenuPanel = false;
-      state.showGamePanel = true;
+      state.activePanel = 'game';
       state.gameCountdown = true;
       state.keyword = i18n.t('game.init');
       state.availableCards = await GameData.getCardsForCategory(state.selectedCategory, i18n.locale);
@@ -119,10 +116,7 @@ const store = createStore({
     // Global actions
     showMenu (state) {
       state.gameStarted = false;
-
-      state.showMenuPanel = true;
-      state.showGamePanel = false;
-      state.showHighscorePanel = false;
+      state.activePanel = 'menu';
 
       this.commit('resetGameState');
     },
@@ -173,9 +167,7 @@ const store = createStore({
     },
     showHighscores (state, afterGamePanel) {
       state.gameStarted = false;
-
-      state.showMenuPanel = false;
-      state.showGamePanel = false;
+      state.activePanel = 'highscores';
 
       if (afterGamePanel) {
         // Delay the animation of the highscores panel if coming from the game panel

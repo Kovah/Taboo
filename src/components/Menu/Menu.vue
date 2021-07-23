@@ -1,17 +1,15 @@
 <template>
 
   <div id="menu" class="panel">
-    <div class="panel-content">
 
-      <LangSwitch/>
-      <Logo/>
-      <HowTo/>
-      <PlayerForm/>
-      <CategorySelect/>
-      <MenuButtons/>
-      <MenuFooter/>
+    <LangSwitch/>
+    <Logo/>
+    <HowTo/>
+    <PlayerForm/>
+    <CategorySelect/>
+    <MenuButtons/>
+    <MenuFooter/>
 
-    </div>
   </div>
 
 </template>

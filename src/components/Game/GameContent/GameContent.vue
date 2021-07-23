@@ -32,8 +32,10 @@ export default {
   name: 'GameContent',
   computed: {
     getKeyword () {
-      this.theKeyword = this.$store.state.keyword;
-      return this.theKeyword;
+      return this.$store.state.keyword;
+    },
+    getBuzzwords () {
+      return this.$store.state.buzzwords;
     },
     gameStarted () {
       return this.$store.state.gameStarted;
@@ -46,9 +48,6 @@ export default {
     }
   },
   methods: {
-    getBuzzwords () {
-      return this.$store.state.buzzwords;
-    },
     showHighscores () {
       this.$store.commit('showHighscores', true);
     },
