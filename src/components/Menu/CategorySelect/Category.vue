@@ -18,7 +18,7 @@
       };
     },
     methods: {
-      selectCategory (e) {
+      selectCategory () {
         this.$store.commit('selectCategory', this.catId);
       }
     }

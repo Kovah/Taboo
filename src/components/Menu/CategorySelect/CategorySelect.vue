@@ -6,13 +6,12 @@
 </template>
 
 <script>
-  import GameData from '../../GameData';
   import Category from './Category';
+  import GameData from '@/components/GameData';
 
   export default {
     name: 'CategorySelect',
     components: {
-      GameData,
       Category
     },
     computed: {

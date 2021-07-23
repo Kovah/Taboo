@@ -1,11 +1,8 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createStore } from 'vuex';
 import GameData from './GameData';
 
-Vue.use(Vuex);
-
 // Create the game store
-const store = new Vuex.Store({
+const store = createStore({
   state: {
     // Defaults
     timerDefault: 60,
