@@ -1,7 +1,7 @@
 .game-panel {
   height: 100%;
   display: grid;
-  grid-template-rows: min-content 2fr 1fr;
+  grid-template-rows: min-content 3fr min-content;
   grid-template-columns: auto;
   grid-row-gap: $spacer-2;
 }

@@ -7,7 +7,7 @@ const store = createStore({
   plugins: [createPersistedState()],
   state: {
     // Defaults
-    timerDefault: 60,
+    roundLength: 60,
     countdownDefault: 4,
     locale: 'en',
 
@@ -36,10 +36,10 @@ const store = createStore({
       state.playerName = playername;
     },
     turnDuration (state, turnDuration) {
-      state.timerDefault = turnDuration;
+      state.roundLength = turnDuration;
     },
     turnNotSet (state) {
-      state.timerDefault = 60;
+      state.roundLength = 60;
     },
     selectCategory (state, newCategory) {
       state.selectedCategory = newCategory;
@@ -143,7 +143,8 @@ const store = createStore({
         name: state.playerName,
         score: state.score,
         category: state.selectedCategory,
-        date: Date.now()
+        date: Date.now(),
+        roundLength: state.roundLength
       };
 
       state.highscores.push(highscore);

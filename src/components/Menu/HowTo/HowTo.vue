@@ -16,7 +16,7 @@ export default {
   name: 'HowTo',
   computed: {
     roundLength () {
-      return this.$store.state.timerDefault;
+      return this.$store.state.roundLength;
     }
   }
 };

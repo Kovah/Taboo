@@ -63,7 +63,7 @@ export default {
       return this.gameTimer > 0 ? this.gameTimer : 0;
     },
     gameProgress () {
-      return this.gameTimer / this.$store.state.timerDefault * 100;
+      return this.gameTimer / this.$store.state.roundLength * 100;
     },
     progressClass () {
       return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__progress--crit' : '';
@@ -82,7 +82,7 @@ export default {
     startGame () {
       this.$store.commit('startGame');
 
-      this.gameTimer = this.$store.state.timerDefault;
+      this.gameTimer = this.$store.state.roundLength;
 
       this.gameTimerInterval = window.setInterval(() => {
         this.gameTimer--;

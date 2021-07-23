@@ -29,13 +29,13 @@
   }
 
   // States
-  &:hover,
-  &:focus {
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
     background-position: 50% 0;
   }
 
-  &:active,
-  &.active {
+  &:active:not(:disabled),
+  &.active:not(:disabled) {
     background-position: 100% 0;
     transform: scale(.985);
   }

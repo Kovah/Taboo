@@ -33,6 +33,7 @@
     "empty": "Keine Highscores vorhanden.",
     "delete": "Alle Highscores löschen",
     "rank": "Rang",
-    "date": "Datum"
+    "date": "Datum",
+    "roundLength": "Rundenlänge"
   }
 }

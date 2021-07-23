@@ -5,6 +5,7 @@
     <td class="highscore__category">{{ categoryName(highscore.category) }}</td>
     <td class="highscore__score-success">{{ highscore.score.success }}</td>
     <td class="highscore__score-fail">{{ highscore.score.fail }}</td>
+    <td class="highscore__round-length">{{ highscore.roundLength }}s</td>
     <td class="highscore__date">{{ highscoreDate }}</td>
   </tr>
 </template>

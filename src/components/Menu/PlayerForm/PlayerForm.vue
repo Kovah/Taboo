@@ -8,7 +8,7 @@
     <div class="form__group">
       <label for="turn-duration" class="player-form__label">{{ $t('game.roundDuration') }}</label>
       <input type="number" class="form__input player-form__input" id="turn-duration" name="turn-duration"
-        min="10" max="600" v-bind:value="this.$store.state.timerDefault" @keyup="processTurnDuration">
+        min="10" max="600" v-bind:value="this.$store.state.roundLength" @keyup="processTurnDuration">
     </div>
   </div>
 </template>
