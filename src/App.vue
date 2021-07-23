@@ -20,9 +20,6 @@ export default {
     Game,
     Highscores
   },
-  mounted () {
-    this.$store.commit('initHighscores');
-  },
   methods: {
     beforeLeave() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -32,6 +29,5 @@ export default {
 </script>
 
 <style type="text/css" lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,700&display=swap');
 @import "@/styles/app.scss";
 </style>
