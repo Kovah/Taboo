@@ -1,22 +1,28 @@
-.form {
+.form__group {
+  margin-bottom: $spacer-3;
 
-  &__group {
-    margin-bottom: $paragraph-margin-bottom;
+  label {
+    display: block;
+    margin-bottom: $spacer-2;
+    font-weight: $font-weight-bold;
+  }
+
+  @media screen and (min-width: $screen-sm) {
+    font-size: $font-size-lg;
   }
 }
 
-input:not([type=checkbox]):not([type=radio]) {
+input:not([type=checkbox]):not([type=radio]), select {
   display: block;
   width: 100%;
-  background-color: $input-bg;
-  border: $input-border-width solid $input-border-color;
-  color: $body-color;
   padding: $input-padding;
-  font-size: $font-size-lg;
+  background-color: $input-bg;
+  color: $body-color;
+  border: $input-border-width solid $input-border-color;
+  border-radius: $border-radius;
 
   &:focus {
     border-color: $input-active-border-color;
-    outline: $input-active-outline-width solid $input-active-outline-color;
-    box-shadow: none;
+    outline: none;
   }
 }

@@ -9,18 +9,18 @@
 </template>
 
 <script>
-  export default {
-    name: 'Category',
-    props: ['catId', 'text', 'color', 'catIndex'],
-    data () {
-      return {
-        isActive: false
-      };
-    },
-    methods: {
-      selectCategory (e) {
-        this.$store.commit('selectCategory', this.catId);
-      }
+export default {
+  name: 'Category',
+  props: ['catId', 'text', 'color', 'catIndex'],
+  data () {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    selectCategory () {
+      this.$store.commit('selectCategory', this.catId);
     }
-  };
+  }
+};
 </script>

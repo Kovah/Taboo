@@ -1,5 +1,0 @@
-@mixin bg-gradient($color){
-  $gradient-color: lighten($color, $gradient-modifier);
-  background: linear-gradient($gradient-angle, $color, $gradient-color);
-  box-shadow: 0 3px 5px rgba($color, .2);
-}

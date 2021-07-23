@@ -11,14 +11,13 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
 
-$blue: #1e88e5;
+$blue: #0E77F7;
 $indigo: #5e35b1;
 $purple: #8e24aa;
 $pink: #d81b60;
 $red: #e53935;
 $orange: #fb8c00;
-$yellow: #fdd835;
-$green: #43a047;
+$green: #64AD41;
 $teal: #00acc1;
 $cyan: #039be5;
 
@@ -29,13 +28,12 @@ $colors: (
   "pink": $pink,
   "red": $red,
   "orange": $orange,
-  "yellow": $yellow,
   "green": $green,
   "teal": $teal,
   "cyan": $cyan,
 );
 
-$primary: $blue;
+$primary: $cyan;
 
 $body-color: $gray-800;
 $body-bg: $gray-100;
@@ -45,11 +43,13 @@ $link-decoration: none;
 $link-hover-color: $primary;
 $link-hover-decoration: underline;
 
-$gradient-modifier: 10%;
-$gradient-angle: 150deg;
+$gradient-modifier: 30deg;
+$gradient-angle: 140deg;
 
-$focus-modifier: 5%;
-$active-modifier: 10%;
+$focus-modifier: 10%;
+$focus-modifier-deg: 20deg;
+$active-modifier: 20%;
+$active-modifier-deg: 40deg;
 
 // Screen sizes
 $screen-xs: 0;
@@ -69,9 +69,9 @@ $spacer-4: $spacer * 1.5;
 $spacer-5: $spacer * 3;
 
 // Font Vars
-$font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-base: 'Asap', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-condensed: 'Open Sans Condensed', $font-family-base;
+$font-family-condensed: 'Asap Condensed', $font-family-base;
 
 $font-weight-base: 400;
 $font-weight-bold: 600;
@@ -89,30 +89,35 @@ $font-size-h1: $font-size-xl * 2;
 $font-size-h2: $font-size-xl;
 $font-size-h3: $font-size-lg;
 
+$font-size-keyword-mobile: $font-size-xl;
+$font-size-keyword: $font-size-xl * 1.5;
+
+$border-radius: .5rem;
+
 // Margins
 $headings-margin-bottom: 0;
 $paragraph-margin-bottom: $spacer-2;
 
 // Panels
-$panel-anim-speed: .3s;
-$panel-anim-timing: cubic-bezier(0.395, 0.610, 0.505, 1.330);
+$panel-anim-speed: 400ms;
+$panel-top-size: 1.5rem;
+$panel-margin: 4rem;
+$panel-margin-mobile: 2rem;
 
 // Forms
 $form-group-margin: $spacer-2;
 
 $input-bg: $body-bg;
 $input-border-width: 1px;
-$input-border-color: $gray-600;
+$input-border-color: $gray-500;
 $input-padding-x: $spacer-3;
 $input-padding-y: $spacer-2;
 $input-padding: $input-padding-y $input-padding-x;
 
 $input-active-border-color: $gray-900;
-$input-active-outline-width: 3px;
-$input-active-outline-color: $gray-300;
 
 // Buttons
-$btn-default-bg: $gray-900;
+$btn-default-bg: $primary;
 $btn-default-color: $white;
 $btn-padding-x: $spacer-3;
 $btn-padding-y: $spacer-2;

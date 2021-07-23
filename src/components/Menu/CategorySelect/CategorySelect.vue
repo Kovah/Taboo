@@ -6,20 +6,22 @@
 </template>
 
 <script>
-  import GameData from '../../GameData';
-  import Category from './Category';
+import Category from './Category';
+import GameData from '@/components/GameData';
 
-  export default {
-    name: 'CategorySelect',
-    components: {
-      GameData,
-      Category
+export default {
+  name: 'CategorySelect',
+  components: {
+    Category
+  },
+  computed: {
+    categories () {
+      return GameData.getCategories(this.$store.state.locale);
     },
-    data () {
-      return {
-        categories: GameData.getCategories(),
-        colors: GameData.getColors()
-      };
+    colors () {
+      const colors = GameData.getColors();
+      return colors.concat(colors);
     }
-  };
+  }
+};
 </script>

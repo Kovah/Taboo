@@ -1,0 +1,19 @@
+.language-switch {
+  text-align: right;
+
+  select {
+    font-size: $font-size-sm;
+    display: inline-block;
+    width: auto;
+    padding: $spacer-1 $spacer-2;
+    background-color: $input-bg;
+    color: $body-color;
+    border: $input-border-width solid $input-border-color;
+    border-radius: $border-radius;
+
+    &:focus {
+      border-color: $input-active-border-color;
+      outline: none;
+    }
+  }
+}

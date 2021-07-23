@@ -1,0 +1,32 @@
+$font-dir: "~@/assets/fonts";
+
+@font-face {
+  font-family: 'Asap';
+  src: local('Asap Regular'), local('Asap-Regular'),
+  url('#{$font-dir}/subset-Asap-Regular.woff2') format('woff2'),
+  url('#{$font-dir}/subset-Asap-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Asap';
+  src: local('Asap Bold'), local('Asap-Bold'),
+  url('#{$font-dir}/subset-Asap-Bold.woff2') format('woff2'),
+  url('#{$font-dir}/subset-Asap-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Asap Condensed';
+  src: local('Asap Condensed Regular'), local('AsapCondensed-Regular'),
+  url('#{$font-dir}/subset-AsapCondensed-Regular.woff2') format('woff2'),
+  url('#{$font-dir}/subset-AsapCondensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+

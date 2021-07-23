@@ -1,0 +1,39 @@
+{
+  "title": "KVH Tabu",
+  "subline": "Ein kleines, Tabu-ähnliches Spiel für den Browser",
+  "menu": "Zurück zum Menü",
+  "howto": {
+    "title": "So wird gespielt",
+    "instruction": [
+      "Gib deinen Namen ein und wähle eine Kategorie.",
+      "Starte das Spiel.",
+      "Du hast {roundLength} Sekunden, um deinen Freunden das angezeigte Wort zu erklären. Du darfst zur Erklärung nicht die Wörter aus dem roten Bereich nutzen!",
+      "Klicke auf den grünen Button, wenn deine Freunde das Wort erraten haben. Klicke Rot, wenn du das Wort überspringen möchtest. Du kannst auch die rechte Pfeiltaste für den grünen Button und die linke Pfeiltaste für den roten Button nutzen.",
+      "Alle Ergebnisse werden in deinem Browser gespeichert."
+    ]
+  },
+  "meta": {
+    "footerNotice": "Ein Spiel von"
+  },
+  "game": {
+    "player": "Spieler",
+    "playerName": "Gib deinen Namen ein:",
+    "playerDefault": "Spieler 1",
+    "category": "Kategorie",
+    "start": "Spiel starten",
+    "stop": "Beenden",
+    "over": "Spiel zuende!",
+    "init": "Mach dich bereit",
+    "roundDuration": "Rundendauer in Sekunden:",
+    "time": "Zeit"
+  },
+  "highscores": {
+    "title": "Highscores",
+    "show": "Highscores anzeigen",
+    "empty": "Keine Highscores vorhanden.",
+    "delete": "Alle Highscores löschen",
+    "rank": "Rang",
+    "date": "Datum",
+    "roundLength": "Rundenlänge"
+  }
+}

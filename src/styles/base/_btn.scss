@@ -7,16 +7,37 @@
   color: $btn-default-color;
   padding: $btn-padding;
   font-size: $font-size-base;
-  @include bg-gradient($btn-default-bg);
+  border-radius: $border-radius;
+  transition: background-position 200ms ease, transform 150ms ease;
 
-  // States
-  &:hover,
-  &:focus {
-    @include bg-gradient(darken($btn-default-bg, $focus-modifier));
+  background: linear-gradient($gradient-angle, $teal, $blue, $indigo);
+  background-size: 300% 100%;
+
+  // Color variants
+  &--success {
+    $hoverBg: adjust_hue($green, $focus-modifier-deg);
+    $activeBg: adjust_hue($green, $active-modifier-deg);
+    background: linear-gradient($gradient-angle, $green, $hoverBg, $activeBg);
+    background-size: 300% 100%;
   }
 
-  &:active {
-    @include bg-gradient(darken($btn-default-bg, $active-modifier));
+  &--fail {
+    $hoverBg: adjust_hue($red, $focus-modifier-deg);
+    $activeBg: adjust_hue($red, $active-modifier-deg);
+    background: linear-gradient($gradient-angle, $red, $hoverBg, $activeBg);
+    background-size: 300% 100%;
+  }
+
+  // States
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background-position: 50% 0;
+  }
+
+  &:active:not(:disabled),
+  &.active:not(:disabled) {
+    background-position: 100% 0;
+    transform: scale(.985);
   }
 
   &:disabled {
@@ -30,37 +51,10 @@
     font-size: $font-size-lg;
   }
 
-  // Color variants
-  &--success {
-    @include bg-gradient($green);
-
-    &:hover,
-    &:focus {
-      @include bg-gradient(darken($green, $focus-modifier));
-    }
-
-    &:active {
-      @include bg-gradient(darken($green, $active-modifier));
-    }
-  }
-
-  &--fail {
-    @include bg-gradient($red);
-
-    &:hover,
-    &:focus {
-      @include bg-gradient(darken($red, $focus-modifier));
-    }
-
-    &:active {
-      @include bg-gradient(darken($red, $active-modifier));
-    }
-  }
-
   // Buttons with icons in it
   svg, img {
     display: inline-block;
-    max-width: 100%;
-    max-height: 80%;
+    max-width: 1rem;
+    max-height: 1rem;
   }
 }

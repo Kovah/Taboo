@@ -1,30 +1,23 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createStore } from 'vuex';
+import createPersistedState from "vuex-persistedstate";
 import GameData from './GameData';
 
-Vue.use(Vuex);
-
 // Create the game store
-const store = new Vuex.Store({
+const store = createStore({
+  plugins: [createPersistedState()],
   state: {
     // Defaults
-    timerDefault: 60,
+    roundLength: 60,
     countdownDefault: 4,
-    gameInitText: 'Mach dich bereit!',
+    locale: 'en',
 
     // General game data
     playerName: '',
     selectedCategory: 'animals',
     availableCards: {},
 
-    // Menu states
-    playerReady: false,
-    categoryReady: true,
-    gameReady: false,
-
     // App states
-    showGamePanel: false,
-    showHighscorePanel: false,
+    activePanel: 'menu',
     gameCountdown: false,
     gameStarted: false,
 
@@ -39,31 +32,32 @@ const store = new Vuex.Store({
   },
   mutations: {
     // Menu mutations
-    playerReady (state, playername) {
+    setPlayerName (state, playername) {
       state.playerName = playername;
-      state.gameReady = state.categoryReady;
     },
-    playerNotReady (state) {
-      state.gameReady = state.playerReady = false;
+    turnDuration (state, turnDuration) {
+      state.roundLength = turnDuration;
     },
-    categoryReady (state) {
-      state.gameReady = state.playerReady;
-    },
-    categoryNotReady (state) {
-      state.gameReady = state.categoryReady = false;
+    turnNotSet (state) {
+      state.roundLength = 60;
     },
     selectCategory (state, newCategory) {
       state.selectedCategory = newCategory;
 
       console.log('Category changed to ' + newCategory);
     },
+    switchLocale (state, payload) {
+      payload.vm.$i18n.locale = payload.locale;
+      state.locale = payload.locale;
+      document.documentElement.setAttribute('lang', payload.locale);
+    },
 
     // Start the game countdown
-    startCountdown (state) {
-      state.showGamePanel = true;
+    async startCountdown (state, i18n) {
+      state.activePanel = 'game';
       state.gameCountdown = true;
-      state.keyword = state.gameInitText;
-      state.availableCards = GameData.getCardsForCategory(state.selectedCategory);
+      state.keyword = i18n.t('game.init');
+      state.availableCards = await GameData.getCardsForCategory(state.selectedCategory, i18n.locale);
 
       console.log('Game started by player ' + state.playerName + ' with category ' + state.selectedCategory);
     },
@@ -124,26 +118,13 @@ const store = new Vuex.Store({
     // Global actions
     showMenu (state) {
       state.gameStarted = false;
-      state.showGamePanel = false;
-      state.showHighscorePanel = false;
+      state.activePanel = 'menu';
 
       this.commit('resetGameState');
     },
 
     // Highscore actions
-    initHighscores(state) {
-      if (state.highscores.length === 0) {
-        // Try to get the highscores from local storage
-        let localScores = JSON.parse(localStorage.getItem('highscores'));
-        if (localScores != null) {
-          console.log('Old highscores loaded');
-          state.highscores = localScores;
-        }
-      }
-
-      this.commit('sortHighscores');
-    },
-    sortHighscores(state) {
+    sortHighscores (state) {
       // Sort the highscores by total score descending
       state.highscores = state.highscores.sort((a, b) => {
         // Calculate a total score by substrating the fail from the success cards
@@ -162,30 +143,17 @@ const store = new Vuex.Store({
         name: state.playerName,
         score: state.score,
         category: state.selectedCategory,
-        date: Date.now()
+        date: Date.now(),
+        roundLength: state.roundLength
       };
 
       state.highscores.push(highscore);
 
-      if (typeof(Storage) !== 'undefined') {
-        // Save the highscore to the local storage is available
-        localStorage.setItem('highscores', JSON.stringify(state.highscores));
-      }
-
       this.commit('sortHighscores');
     },
-    showHighscores (state, afterGamePanel) {
+    showHighscores (state) {
       state.gameStarted = false;
-      state.showGamePanel = false;
-
-      if (afterGamePanel) {
-        // Delay the animation of the highscores panel if coming from the game panel
-        window.setTimeout(()=>{
-          state.showHighscorePanel = true;
-        }, 300);
-      } else {
-        state.showHighscorePanel = true;
-      }
+      state.activePanel = 'highscores';
 
       this.commit('resetGameState');
     },
@@ -195,10 +163,6 @@ const store = new Vuex.Store({
       }
 
       state.highscores = [];
-
-      if (typeof(Storage) !== 'undefined') {
-        localStorage.removeItem('highscores');
-      }
     }
   }
 });

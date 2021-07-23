@@ -1,13 +1,9 @@
 .logo {
-
   text-align: center;
-  padding: $spacer-4 0;
-
-  &__headline {
-    //
-  }
+  padding: $spacer-2 0;
 
   &__subline {
     font-size: $font-size-lg;
+    margin: 0;
   }
 }

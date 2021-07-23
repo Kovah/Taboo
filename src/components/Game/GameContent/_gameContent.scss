@@ -1,13 +1,11 @@
 .game-content {
-  flex: 1 0 100%;
-  display: flex;
-  flex-wrap: wrap;
-  height: 65%;
+  display: grid;
+  grid-template-rows: auto;
+  height: 100%;
   word-break: break-word;
   hyphens: auto;
 
   &__endpanel {
-    flex: 1 1 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -24,7 +22,6 @@
   }
 
   &__endpanel-content {
-    flex: 1 1 100%;
     text-align: center;
 
     .btn + .btn {
@@ -39,32 +36,31 @@
   }
 
   &__keyword {
-    flex: 1 1 100%;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-size: $font-size-h2;
+    font-size: $font-size-keyword-mobile;
     font-weight: $font-weight-headings;
 
-    @media screen and (min-width: $screen-lg) {
-      font-size: $font-size-h1;
+    @media screen and (min-width: $screen-md) {
+      font-size: $font-size-keyword;
     }
   }
 
   &__buzzwords {
     position: relative;
-    flex: 1 1 100%;
-    display: flex;
     text-align: center;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: $spacer;
     padding: $spacer-2;
     background-color: $gray-100;
-
+    border-radius: $border-radius;
 
     @media screen and (min-width: $screen-sm) {
+      grid-template-columns: 1fr 1fr;
       padding: $spacer;
     }
 
@@ -74,23 +70,15 @@
   }
 
   &__buzzword {
-    flex: 1 1 100%;
-    padding: $spacer-1 $spacer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: darken($red, 20%);
     font-family: $font-family-condensed;
     font-size: $font-size-lg;
 
     @media screen and (min-width: $screen-lg) {
-      flex: 0 1 50%;
       font-size: $font-size-xl;
-    }
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
     }
   }
 }

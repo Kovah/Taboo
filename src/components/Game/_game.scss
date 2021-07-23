@@ -1,7 +1,9 @@
-#game {
-  z-index: 200;
-  display: flex;
-  flex-wrap: wrap;
+.game-panel {
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content 3fr min-content;
+  grid-template-columns: auto;
+  grid-row-gap: $spacer-2;
 }
 
 @import "GameHeader/gameHeader";
