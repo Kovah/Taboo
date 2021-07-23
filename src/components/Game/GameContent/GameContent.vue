@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     showHighscores () {
-      this.$store.commit('showHighscores', true);
+      this.$store.commit('showHighscores');
     },
     showMenu () {
       this.$store.commit('showMenu');

@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted () {
-    this.$store.subscribe((mutation, state) => {
+    this.$store.subscribe((mutation) => {
       if (mutation.type === 'startGame') {
         window.addEventListener('keydown', this.keyboardListener);
       }

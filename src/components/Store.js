@@ -1,8 +1,10 @@
 import { createStore } from 'vuex';
+import createPersistedState from "vuex-persistedstate";
 import GameData from './GameData';
 
 // Create the game store
 const store = createStore({
+  plugins: [createPersistedState()],
   state: {
     // Defaults
     timerDefault: 60,
@@ -122,18 +124,6 @@ const store = createStore({
     },
 
     // Highscore actions
-    initHighscores (state) {
-      if (state.highscores.length === 0) {
-        // Try to get the highscores from local storage
-        let localScores = JSON.parse(localStorage.getItem('highscores'));
-        if (localScores != null) {
-          console.log('Old highscores loaded');
-          state.highscores = localScores;
-        }
-      }
-
-      this.commit('sortHighscores');
-    },
     sortHighscores (state) {
       // Sort the highscores by total score descending
       state.highscores = state.highscores.sort((a, b) => {
@@ -158,25 +148,11 @@ const store = createStore({
 
       state.highscores.push(highscore);
 
-      if (typeof (Storage) !== 'undefined') {
-        // Save the highscore to the local storage is available
-        localStorage.setItem('highscores', JSON.stringify(state.highscores));
-      }
-
       this.commit('sortHighscores');
     },
-    showHighscores (state, afterGamePanel) {
+    showHighscores (state) {
       state.gameStarted = false;
       state.activePanel = 'highscores';
-
-      if (afterGamePanel) {
-        // Delay the animation of the highscores panel if coming from the game panel
-        window.setTimeout(() => {
-          state.showHighscorePanel = true;
-        }, 300);
-      } else {
-        state.showHighscorePanel = true;
-      }
 
       this.commit('resetGameState');
     },
@@ -186,10 +162,6 @@ const store = createStore({
       }
 
       state.highscores = [];
-
-      if (typeof (Storage) !== 'undefined') {
-        localStorage.removeItem('highscores');
-      }
     }
   }
 });
