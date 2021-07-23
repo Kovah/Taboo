@@ -1,0 +1,85 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - main
+
+jobs:
+
+  build:
+    name: Build Taboo with absolute paths
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install modules
+        run: npm install
+
+      - name: Run tests
+        run: npm run build
+
+      - name: Create package
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          path: 'dist'
+          filename: 'taboo-build.zip'
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: taboo-build.zip
+
+
+  build-relative:
+    name: Build Taboo with relative paths
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install modules
+        run: npm install -g
+
+      - name: Run tests
+        run: npm run build
+        env:
+          APP_RELATIVE: true
+
+      - name: Create package
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          path: 'dist'
+          filename: 'taboo-build-relative.zip'
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build-relative
+          path: taboo-build-relative.zip
