@@ -10,22 +10,22 @@
 </template>
 
 <script>
-  import GameData from '../../GameData';
+import GameData from '../../GameData';
 
-  export default {
-    name: 'Highscore',
-    props: ['highscore', 'highscoreIndex'],
-    computed: {
-      highscoreDate () {
-        const date = new Date(this.highscore.date);
-        const locale = (this.$i18n.locale === 'de' ? 'de-DE' : 'en-US');
-        return date.toLocaleString(locale);
-      }
-    },
-    methods: {
-      categoryName (category) {
-        return GameData.getCategories(this.$i18n.locale)[category].text;
-      }
+export default {
+  name: 'Highscore',
+  props: ['highscore', 'highscoreIndex'],
+  computed: {
+    highscoreDate () {
+      const date = new Date(this.highscore.date);
+      const locale = (this.$i18n.locale === 'de' ? 'de-DE' : 'en-US');
+      return date.toLocaleString(locale);
     }
-  };
+  },
+  methods: {
+    categoryName (category) {
+      return GameData.getCategories(this.$i18n.locale)[category].text;
+    }
+  }
+};
 </script>

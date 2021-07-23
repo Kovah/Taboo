@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'MenuFooter'
-  };
+export default {
+  name: 'MenuFooter'
+};
 </script>

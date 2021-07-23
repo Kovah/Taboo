@@ -46,7 +46,7 @@ const store = createStore({
 
       console.log('Category changed to ' + newCategory);
     },
-    switchLocale(state, payload) {
+    switchLocale (state, payload) {
       payload.vm.$i18n.locale = payload.locale;
       state.locale = payload.locale;
     },
@@ -127,7 +127,7 @@ const store = createStore({
     },
 
     // Highscore actions
-    initHighscores(state) {
+    initHighscores (state) {
       if (state.highscores.length === 0) {
         // Try to get the highscores from local storage
         let localScores = JSON.parse(localStorage.getItem('highscores'));
@@ -139,7 +139,7 @@ const store = createStore({
 
       this.commit('sortHighscores');
     },
-    sortHighscores(state) {
+    sortHighscores (state) {
       // Sort the highscores by total score descending
       state.highscores = state.highscores.sort((a, b) => {
         // Calculate a total score by substrating the fail from the success cards
@@ -163,7 +163,7 @@ const store = createStore({
 
       state.highscores.push(highscore);
 
-      if (typeof(Storage) !== 'undefined') {
+      if (typeof (Storage) !== 'undefined') {
         // Save the highscore to the local storage is available
         localStorage.setItem('highscores', JSON.stringify(state.highscores));
       }
@@ -178,7 +178,7 @@ const store = createStore({
 
       if (afterGamePanel) {
         // Delay the animation of the highscores panel if coming from the game panel
-        window.setTimeout(()=>{
+        window.setTimeout(() => {
           state.showHighscorePanel = true;
         }, 300);
       } else {
@@ -194,7 +194,7 @@ const store = createStore({
 
       state.highscores = [];
 
-      if (typeof(Storage) !== 'undefined') {
+      if (typeof (Storage) !== 'undefined') {
         localStorage.removeItem('highscores');
       }
     }

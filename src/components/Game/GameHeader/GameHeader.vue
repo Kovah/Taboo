@@ -3,7 +3,9 @@
 
     <div class="game-header__inner">
       <div class="game-header__timer">
-        {{ $t('game.time')}}: <span v-bind:class="'game-header__timer-left ' + timerClass">{{ computedGameTimer }}</span>
+        {{ $t('game.time') }}: <span v-bind:class="'game-header__timer-left ' + timerClass">{{
+          computedGameTimer
+        }}</span>
       </div>
 
       <div class="game-header__score">
@@ -15,7 +17,7 @@
       <div class="game-header__stop">
         <button type="button" class="btn game-header__stop-btn" id="game-stop"
           v-bind:disabled="!gameStarted" v-on:click="stopGame">
-          {{ $t('game.stop')}}
+          {{ $t('game.stop') }}
         </button>
       </div>
     </div>
@@ -27,77 +29,77 @@
 </template>
 
 <script>
-  export default {
-    name: 'GameHeader',
-    data () {
-      return {
-        gameCountdownInterval: null,
-        gameCountdown: 0,
-        gameTimerInterval: null,
-        gameTimer: 0
-      };
+export default {
+  name: 'GameHeader',
+  data () {
+    return {
+      gameCountdownInterval: null,
+      gameCountdown: 0,
+      gameTimerInterval: null,
+      gameTimer: 0
+    };
+  },
+  mounted () {
+    // Initialize the game countdown and start it
+    console.log('Countdown started');
+    this.gameCountdown = this.$store.state.countdownDefault;
+
+    this.gameCountdownInterval = window.setInterval(() => {
+      this.gameCountdown--;
+      this.$store.state.keyword = this.gameCountdown;
+
+      if (this.gameCountdown === 0) {
+        // Let the game set a new keyword and start the actual game if countdown reaches zero
+        this.startGame();
+        clearInterval(this.gameCountdownInterval);
+      }
+    }, 1000);
+  },
+  computed: {
+    timerClass () {
+      return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__timer-left--crit' : '';
     },
-    mounted () {
-      // Initialize the game countdown and start it
-      console.log('Countdown started');
-      this.gameCountdown = this.$store.state.countdownDefault;
+    computedGameTimer () {
+      return this.gameTimer > 0 ? this.gameTimer : 0;
+    },
+    gameProgress () {
+      return this.gameTimer / this.$store.state.timerDefault * 100;
+    },
+    progressClass () {
+      return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__progress--crit' : '';
+    },
+    scoreSuccess () {
+      return this.$store.state.score.success;
+    },
+    scoreFail () {
+      return this.$store.state.score.fail;
+    },
+    gameStarted () {
+      return this.$store.state.gameStarted;
+    }
+  },
+  methods: {
+    startGame () {
+      this.$store.commit('startGame');
 
-      this.gameCountdownInterval = window.setInterval(() => {
-        this.gameCountdown--;
-        this.$store.state.keyword = this.gameCountdown;
+      this.gameTimer = this.$store.state.timerDefault;
 
-        if (this.gameCountdown === 0) {
-          // Let the game set a new keyword and start the actual game if countdown reaches zero
-          this.startGame();
-          clearInterval(this.gameCountdownInterval);
+      this.gameTimerInterval = window.setInterval(() => {
+        this.gameTimer--;
+
+        if (this.gameTimer === 0) {
+          // Stop the game if the game timer reaches zero
+          this.stopGame();
+          clearInterval(this.gameTimerInterval);
         }
       }, 1000);
     },
-    computed: {
-      timerClass () {
-        return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__timer-left--crit' : '';
-      },
-      computedGameTimer () {
-        return this.gameTimer > 0 ? this.gameTimer : 0;
-      },
-      gameProgress () {
-        return this.gameTimer / this.$store.state.timerDefault * 100;
-      },
-      progressClass () {
-        return this.gameTimer < 11 && this.gameTimer > 0 ? 'game-header__progress--crit' : '';
-      },
-      scoreSuccess () {
-        return this.$store.state.score.success;
-      },
-      scoreFail () {
-        return this.$store.state.score.fail;
-      },
-      gameStarted () {
-        return this.$store.state.gameStarted;
-      }
-    },
-    methods: {
-      startGame () {
-        this.$store.commit('startGame');
+    stopGame () {
+      clearInterval(this.gameCountdownInterval);
+      clearInterval(this.gameTimerInterval);
 
-        this.gameTimer = this.$store.state.timerDefault;
-
-        this.gameTimerInterval = window.setInterval(() => {
-          this.gameTimer--;
-
-          if (this.gameTimer === 0) {
-            // Stop the game if the game timer reaches zero
-            this.stopGame();
-            clearInterval(this.gameTimerInterval);
-          }
-        }, 1000);
-      },
-      stopGame () {
-        clearInterval(this.gameCountdownInterval);
-        clearInterval(this.gameTimerInterval);
-
-        this.$store.commit('stopGame');
-      }
+      this.$store.commit('stopGame');
     }
-  };
+  }
+};
 </script>

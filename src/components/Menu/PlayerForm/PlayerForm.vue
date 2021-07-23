@@ -14,26 +14,26 @@
 </template>
 
 <script>
-  export default {
-    name: 'PlayerForm',
-    created () {
-      this.$store.commit('setPlayerName', this.$i18n.t('game.playerDefault'));
+export default {
+  name: 'PlayerForm',
+  created () {
+    this.$store.commit('setPlayerName', this.$i18n.t('game.playerDefault'));
+  },
+  methods: {
+    processName (e) {
+      if (e.target.value.length > 0) {
+        this.$store.commit('setPlayerName', e.target.value);
+      } else {
+        this.$store.commit('setPlayerName', this.$i18n.t('game.playerDefault'));
+      }
     },
-    methods: {
-      processName (e) {
-        if (e.target.value.length > 0) {
-          this.$store.commit('setPlayerName', e.target.value);
-        } else {
-          this.$store.commit('setPlayerName', this.$i18n.t('game.playerDefault'));
-        }
-      },
-      processTurnDuration (e) {
-        if (e.target.value.length > 0) {
-          this.$store.commit('turnDuration', e.target.value);
-        } else {
-          this.$store.commit('turnNotSet');
-        }
+    processTurnDuration (e) {
+      if (e.target.value.length > 0) {
+        this.$store.commit('turnDuration', e.target.value);
+      } else {
+        this.$store.commit('turnNotSet');
       }
     }
-  };
+  }
+};
 </script>

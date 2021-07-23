@@ -15,47 +15,47 @@
 </template>
 
 <script>
-  export default {
-    name: 'GameButtons',
-    computed: {
-      gameStarted () {
-        return this.$store.state.gameStarted;
+export default {
+  name: 'GameButtons',
+  computed: {
+    gameStarted () {
+      return this.$store.state.gameStarted;
+    }
+  },
+  mounted () {
+    this.$store.subscribe((mutation, state) => {
+      if (mutation.type === 'startGame') {
+        window.addEventListener('keydown', this.keyboardListener);
       }
-    },
-    mounted () {
-      this.$store.subscribe((mutation, state) => {
-        if (mutation.type === 'startGame') {
-          window.addEventListener('keydown', this.keyboardListener);
-        }
 
-        if (mutation.type === 'stopGame') {
-          window.removeEventListener('keydown', this.keyboardListener);
-        }
-      });
+      if (mutation.type === 'stopGame') {
+        window.removeEventListener('keydown', this.keyboardListener);
+      }
+    });
+  },
+  methods: {
+    markSuccess () {
+      this.$store.commit('commitSuccess');
     },
-    methods: {
-      markSuccess () {
-        this.$store.commit('commitSuccess');
-      },
-      markFail () {
-        this.$store.commit('commitFail');
-      },
-      pretendButtonClick (buttonReference) {
-        this.$refs[buttonReference].classList.add('active');
+    markFail () {
+      this.$store.commit('commitFail');
+    },
+    pretendButtonClick (buttonReference) {
+      this.$refs[buttonReference].classList.add('active');
 
-        setTimeout(() => {
-          this.$refs[buttonReference].classList.remove('active');
-        }, 150);
-      },
-      keyboardListener (event) {
-        if (event.key === 'ArrowLeft') {
-          this.pretendButtonClick('failBtn');
-          this.markFail();
-        } else if (event.key === 'ArrowRight') {
-          this.pretendButtonClick('successBtn');
-          this.markSuccess();
-        }
+      setTimeout(() => {
+        this.$refs[buttonReference].classList.remove('active');
+      }, 150);
+    },
+    keyboardListener (event) {
+      if (event.key === 'ArrowLeft') {
+        this.pretendButtonClick('failBtn');
+        this.markFail();
+      } else if (event.key === 'ArrowRight') {
+        this.pretendButtonClick('successBtn');
+        this.markSuccess();
       }
     }
-  };
+  }
+};
 </script>

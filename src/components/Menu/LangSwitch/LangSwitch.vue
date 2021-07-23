@@ -7,15 +7,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'LangSwitch',
-    data () {
-      return { langs: ['de', 'en'] }
-    },
-    methods: {
-      changeLocale(event) {
-        this.$store.commit('switchLocale', { vm: this, locale: event.target.value })
-      }
+export default {
+  name: 'LangSwitch',
+  data () {
+    return {langs: ['de', 'en']};
+  },
+  methods: {
+    changeLocale (event) {
+      this.$store.commit('switchLocale', {vm: this, locale: event.target.value});
     }
-  };
+  }
+};
 </script>

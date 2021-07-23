@@ -14,16 +14,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'HighscoresButtons',
-    props: ['hasHighscores'],
-    methods: {
-      deleteHighscores () {
-        this.$store.commit('deleteHighscores');
-      },
-      showMenu () {
-        this.$store.commit('showMenu');
-      }
+export default {
+  name: 'HighscoresButtons',
+  props: ['hasHighscores'],
+  methods: {
+    deleteHighscores () {
+      this.$store.commit('deleteHighscores');
+    },
+    showMenu () {
+      this.$store.commit('showMenu');
     }
-  };
+  }
+};
 </script>

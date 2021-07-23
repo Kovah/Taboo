@@ -10,15 +10,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'MenuButtons',
-    methods: {
-      startGame () {
-        this.$store.commit('startCountdown', this.$i18n);
-      },
-      showHighscores () {
-        this.$store.commit('showHighscores');
-      }
+export default {
+  name: 'MenuButtons',
+  methods: {
+    startGame () {
+      this.$store.commit('startCountdown', this.$i18n);
+    },
+    showHighscores () {
+      this.$store.commit('showHighscores');
     }
-  };
+  }
+};
 </script>
