@@ -49,6 +49,7 @@ const store = createStore({
     switchLocale (state, payload) {
       payload.vm.$i18n.locale = payload.locale;
       state.locale = payload.locale;
+      document.documentElement.setAttribute('lang', payload.locale);
     },
 
     // Start the game countdown
