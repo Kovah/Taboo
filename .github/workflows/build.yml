@@ -30,7 +30,7 @@ jobs:
       - name: Install modules
         run: npm install
 
-      - name: Run tests
+      - name: Run build
         run: npm run build
 
       - name: Create package
@@ -67,7 +67,7 @@ jobs:
       - name: Install modules
         run: npm install
 
-      - name: Run tests
+      - name: Run build
         run: npm run build
         env:
           APP_RELATIVE: true
