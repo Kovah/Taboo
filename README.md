@@ -4,17 +4,18 @@
 
 <p align="center">
 <img src="https://img.shields.io/badge/Available%20Languages-DE,%20EN-blue.svg" alt="Available Languages: DE, EN">
-<img src="https://img.shields.io/badge/Available%20Languages-DE,%20EN-blue.svg" alt="Available Languages: DE, EN">
 <img src="https://img.shields.io/github/tag/Kovah/Taboo.svg" alt="Latest version">
 <img src="https://img.shields.io/github/downloads/Kovah/Taboo/total.svg" alt="Downloads">
 <img src="https://img.shields.io/github/license/Kovah/Taboo.svg" alt="License">
 </p>
 
+&nbsp;
 
 ## Play now
 
 The game is ready to play on [**taboo.kovah.de**](https://taboo.kovah.de/).
 
+&nbsp;
 
 ## Installation
 
@@ -53,6 +54,7 @@ OR
 npm run build
 ```
 
+&nbsp;
 
 ## Contributing
 
