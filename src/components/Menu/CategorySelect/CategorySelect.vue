@@ -7,7 +7,7 @@
 
 <script>
 import Category from './Category';
-import GameData from '@/components/GameData';
+import GameData from '../../GameData';
 
 export default {
   name: 'CategorySelect',
