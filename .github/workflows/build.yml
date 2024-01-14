@@ -13,7 +13,7 @@ jobs:
     name: Build Taboo with absolute paths
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Cache node modules
         uses: actions/cache@v3
@@ -50,7 +50,7 @@ jobs:
     name: Build Taboo with relative paths
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Cache node modules
         uses: actions/cache@v3
