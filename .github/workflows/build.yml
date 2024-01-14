@@ -40,7 +40,7 @@ jobs:
           path: 'dist'
           filename: 'taboo-build.zip'
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: build
           path: taboo-build.zip
@@ -79,7 +79,7 @@ jobs:
           path: 'dist'
           filename: 'taboo-build-relative.zip'
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: build-relative
           path: taboo-build-relative.zip
