@@ -21,10 +21,10 @@
     "@vue/cli-plugin-eslint": "~5.0.1",
     "@vue/cli-service": "~5.0.1",
     "@vue/compiler-sfc": "^3.2.31",
-    "eslint": "^8.57.0",
+    "eslint": "^9.11.1",
     "eslint-plugin-vue": "^9.26.0",
     "sass": "^1.77.2",
-    "sass-loader": "^14.2.1"
+    "sass-loader": "^16.0.2"
   },
   "eslintConfig": {
     "root": true,
