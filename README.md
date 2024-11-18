@@ -11,6 +11,11 @@
 
 &nbsp;
 
+> [!WARNING]
+> Taboo is no longer actively maintained. Please feel free to [contact me](https://github.com/Kovah) if you are interested in this project.
+
+&nbsp;
+
 ## Play now
 
 The game is ready to play on [**taboo.kovah.de**](https://taboo.kovah.de/).
